@@ -86,7 +86,7 @@ void DelayMs( UINT16 ms );
   Description:
     This routine performs a software delay in intervals of 1 microsecond.
   ***************************************************************************/
-void Delay1us( UINT32 tenMicroSecondCounter );
+void DelayUs( UINT32 tenMicroSecondCounter );
 /****************************************************************************
   Function:
     void Delay500ns( UINT16 ms )

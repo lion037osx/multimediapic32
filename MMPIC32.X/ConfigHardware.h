@@ -109,7 +109,16 @@ extern "C" {
 #define LIS_ID_REG                  0x0F
 #define LIS_CNTRL_REG1              0x20 
 
+#define SPI_CS_TRIS       TRISBbits.TRISB9
+#define SPI_CS_LAT        LATBbits.LATB9
+#define SPI_CS        PORTBbits.RB9 
 
+#define SPI_SCK_TRIS      TRISGbits.TRISG6
+#define SPI_SDO_TRIS      TRISGbits.TRISG8
+
+#define SPI_SCK_TRIS      TRISGbits.TRISG6
+#define SPI_SDO_TRIS      TRISGbits.TRISG8
+#define SPI_CS_TRIS       TRISBbits.TRISB9
     
 #ifdef	__cplusplus
 }

@@ -1,11 +1,11 @@
-#include "drawIcons.h"
+#include "DrawIcons.h"
 //#include "System.h"n
 
 //#include <GenericTypeDefs.h>
 //#include "Colors.h"
 #include "ConfigHardware.h"
 #include "Graphics/Ssd1963.h"
-//#include "Graphics/Tft.h"
+#include "Graphics/Tft.h"
 
 void buttonSelect(UINT8 select){
 static UINT16 start_y,end_y;

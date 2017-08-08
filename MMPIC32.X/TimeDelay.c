@@ -214,7 +214,7 @@ void DelayMs( UINT16 ms )
     #endif
 }
 
-void Delay1us( UINT32 tenMicroSecondCounter )
+void DelayUs( UINT32 tenMicroSecondCounter )
 {
     volatile INT32 cyclesRequiredForEntireDelay;    
         

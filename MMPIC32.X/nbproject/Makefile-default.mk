@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c DrawGraphics.c DrawText.c interrupts.c
+SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c DrawGraphics.c DrawText.c interrupts.c drivers/tsc2046.c drivers/spiTsc2046.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/DrawGraphics.o ${OBJECTDIR}/DrawText.o ${OBJECTDIR}/interrupts.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/GOLFont.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/DrawGraphics.o.d ${OBJECTDIR}/DrawText.o.d ${OBJECTDIR}/interrupts.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/DrawGraphics.o ${OBJECTDIR}/DrawText.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/GOLFont.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/DrawGraphics.o.d ${OBJECTDIR}/DrawText.o.d ${OBJECTDIR}/interrupts.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/DrawGraphics.o ${OBJECTDIR}/DrawText.o ${OBJECTDIR}/interrupts.o
+OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/DrawGraphics.o ${OBJECTDIR}/DrawText.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o
 
 # Source Files
-SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c DrawGraphics.c DrawText.c interrupts.c
+SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c DrawGraphics.c DrawText.c interrupts.c drivers/tsc2046.c drivers/spiTsc2046.c
 
 
 CFLAGS=
@@ -190,6 +190,18 @@ ${OBJECTDIR}/interrupts.o: interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/interrupts.o 
 	@${FIXDEPS} "${OBJECTDIR}/interrupts.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/interrupts.o.d" -o ${OBJECTDIR}/interrupts.o interrupts.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/drivers/tsc2046.o: drivers/tsc2046.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/drivers" 
+	@${RM} ${OBJECTDIR}/drivers/tsc2046.o.d 
+	@${RM} ${OBJECTDIR}/drivers/tsc2046.o 
+	@${FIXDEPS} "${OBJECTDIR}/drivers/tsc2046.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/drivers/tsc2046.o.d" -o ${OBJECTDIR}/drivers/tsc2046.o drivers/tsc2046.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/drivers/spiTsc2046.o: drivers/spiTsc2046.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/drivers" 
+	@${RM} ${OBJECTDIR}/drivers/spiTsc2046.o.d 
+	@${RM} ${OBJECTDIR}/drivers/spiTsc2046.o 
+	@${FIXDEPS} "${OBJECTDIR}/drivers/spiTsc2046.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/drivers/spiTsc2046.o.d" -o ${OBJECTDIR}/drivers/spiTsc2046.o drivers/spiTsc2046.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/clock/rtcc.o: clock/rtcc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/clock" 
@@ -274,6 +286,18 @@ ${OBJECTDIR}/interrupts.o: interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/interrupts.o.d 
 	@${RM} ${OBJECTDIR}/interrupts.o 
 	@${FIXDEPS} "${OBJECTDIR}/interrupts.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/interrupts.o.d" -o ${OBJECTDIR}/interrupts.o interrupts.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/drivers/tsc2046.o: drivers/tsc2046.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/drivers" 
+	@${RM} ${OBJECTDIR}/drivers/tsc2046.o.d 
+	@${RM} ${OBJECTDIR}/drivers/tsc2046.o 
+	@${FIXDEPS} "${OBJECTDIR}/drivers/tsc2046.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/drivers/tsc2046.o.d" -o ${OBJECTDIR}/drivers/tsc2046.o drivers/tsc2046.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/drivers/spiTsc2046.o: drivers/spiTsc2046.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/drivers" 
+	@${RM} ${OBJECTDIR}/drivers/spiTsc2046.o.d 
+	@${RM} ${OBJECTDIR}/drivers/spiTsc2046.o 
+	@${FIXDEPS} "${OBJECTDIR}/drivers/spiTsc2046.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/drivers/spiTsc2046.o.d" -o ${OBJECTDIR}/drivers/spiTsc2046.o drivers/spiTsc2046.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 endif
 

@@ -10,6 +10,10 @@
         <itemPath>clock/ds1307rtcc.h</itemPath>
         <itemPath>clock/drvI2C.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+        <itemPath>drivers/tsc2046.h</itemPath>
+        <itemPath>drivers/spiTsc2046.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="Graphics" displayName="Graphics" projectFiles="true">
         <itemPath>Graphics/Colors.h</itemPath>
         <itemPath>Graphics/Ssd1963.h</itemPath>
@@ -40,9 +44,9 @@
       <itemPath>TimeDelay.h</itemPath>
       <itemPath>typedefSettings.h</itemPath>
       <itemPath>DrawGraphics.h</itemPath>
-      <itemPath>drawIcons.h</itemPath>
       <itemPath>DrawText.h</itemPath>
       <itemPath>interrupts.h</itemPath>
+      <itemPath>DrawIcons.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -56,6 +60,10 @@
         <itemPath>clock/setttingsRtcc.c</itemPath>
         <itemPath>clock/ds1307.c</itemPath>
         <itemPath>clock/drvI2C.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+        <itemPath>drivers/tsc2046.c</itemPath>
+        <itemPath>drivers/spiTsc2046.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Graphics" displayName="Graphics" projectFiles="true">
         <itemPath>Graphics/Ssd1963.c</itemPath>
@@ -80,6 +88,7 @@
     <Elem>icons</Elem>
     <Elem>Graphics</Elem>
     <Elem>clock</Elem>
+    <Elem>drivers</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

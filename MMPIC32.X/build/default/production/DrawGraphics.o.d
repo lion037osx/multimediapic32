@@ -1,6 +1,6 @@
 build/default/production/DrawGraphics.o:  \
 DrawGraphics.c  \
-drawIcons.h  \
+DrawIcons.h  \
  TimeDelay.h  \
 GenericTypedefs.h  \
 typedefSettings.h  \
@@ -21,4 +21,5 @@ Graphics/../GenericTypedefs.h  \
 Graphics/Tft.h  \
  Graphics/../HardwareProfile.h  \
 Graphics/../ConfigHardware.h  \
- Graphics/Colors.h 
+ Graphics/Colors.h  \
+Graphics/Tft.h 
