@@ -4,6 +4,7 @@
 //#include <stdbool.h>
 #include <plib.h>
 #include "../ConfigHardware.h"
+#include "../TimeDelay.h"
 
 UINT16 getCmdTsc2046(UINT8 cmd)
 {
@@ -53,7 +54,32 @@ return (tmp16 & 0x0fff);
 
 
 bool getCoordTsc2046(UINT16 *x ,UINT16 *y){
+INT16 tmpX, tmpY;
 
+    // If no touch  detect, return FALSE.
+    if(getCmdTsc2046(TSC_Z1) == 0)  return (0);
+
+    tmpX = getCmdTsc2046(TSC_X);      // Read X position
+    tmpY = getCmdTsc2046(TSC_Y);      // Read Y position
+
+    // Check the touch still active now, and again after
+    // some delay (to debounce the touch)
+    if(getCmdTsc2046(TSC_Z1) == 0) return (0);
+    DelayMs(20);
+    if(getCmdTsc2046(TSC_Z1) == 0) return (0);
+    
+    // This seems to be a valid touch. Return TRUE, and the x,y values.
+    if(TSC_SWAP)
+    {
+        *x = tmpY;
+        *y = tmpX;
+    }
+    else
+    {
+        *x = tmpX;
+        *y = tmpY;
+    }
+    return (1);
 }
 
 void setOutputsTsc2046(void){

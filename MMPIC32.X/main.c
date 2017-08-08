@@ -1,9 +1,7 @@
 /*********************************************************************
  ********************************************************************/
 #include <plib.h>
-
-//#pragma config FPLLMUL = MUL_20, FPLLIDIV = DIV_2, FPLLODIV = DIV_1, FWDTEN = OFF
-//#pragma config POSCMOD = HS, FNOSC = PRIPLL, FPBDIV = DIV_8
+//#pragma config FPBDIV = DIV_8
 
 #pragma config FPLLMUL = MUL_20, FPLLIDIV = DIV_2	
 #pragma config FPLLODIV = DIV_1, FWDTEN = OFF
