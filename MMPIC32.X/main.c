@@ -18,3 +18,11 @@ void __ISR(_EXTERNAL_1_VECTOR,IPL7SRS)  ExtInt1_ISR(void){
     LED_RA0=1;
 IFS0bits.INT1IF=0;  
 }
+
+
+/*
+void __ISR(_Timer_1_Vector,ipl3)Timer1Handler(void)
+{
+IFS0CLR = 0x00000010;
+}
+ */
