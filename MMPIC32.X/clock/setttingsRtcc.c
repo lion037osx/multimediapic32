@@ -91,9 +91,9 @@ if((day&OSCON)==OSCON)return;            // if oscillator = already running, do 
 else{                                // if oscillator = not running, set time/date(arbitrary)
 	WRITE_RTCC(ADDR_YEAR,0x17);         // initialize YEAR  register : (20)11           
 	WRITE_RTCC(ADDR_MNTH,0x08);   	     // initialize MONTH register : november   
-	WRITE_RTCC(ADDR_DATE,0x08);   	     // initialize DATE  register : date = 01  
+	WRITE_RTCC(ADDR_DATE,0x09);   	     // initialize DATE  register : date = 01  
 	WRITE_RTCC(ADDR_HOUR,0x01);   	     // initialize HOUR  register : hour = 00  
-	WRITE_RTCC(ADDR_MIN,0x45) ;   	     // initialize MIN   register : min  = 00  
+	WRITE_RTCC(ADDR_MIN,0x15) ;   	     // initialize MIN   register : min  = 00  
 	WRITE_RTCC(ADDR_SEC,START_32KHZ);
 	}
 //return;

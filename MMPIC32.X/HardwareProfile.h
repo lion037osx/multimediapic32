@@ -11,8 +11,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-#define __ENABLE_DRIVERS__
     
+#define __ENABLE_DRIVERS__
+#define __ENABLE_INTERRUPTS__    
     
     
 #ifdef __ENABLE_DRIVERS__
@@ -21,9 +22,18 @@ extern "C" {
     #define __SPI2__    
 #endif
     
-#define HEIGHT_SCREEN DISP_VER_RESOLUTION    
-#define WIDTH_SCREEN DISP_HOR_RESOLUTION
-   
+#ifdef __ENABLE_INTERRUPTS__
+    #define __TIMER1__
+    #define __INTERRUPT_EXTERNAL1__
+    //#define __TIMER2__    
+#endif 
+    
+    
+//#define HEIGHT_SCREEN DISP_VER_RESOLUTION    
+//#define WIDTH_SCREEN DISP_HOR_RESOLUTION
+  #define HEIGHT_SCREEN 272    
+#define WIDTH_SCREEN 480
+  
     
 /*******************************        Config Debug        ************************************/    
 #define __DEBUG_CLOCK__    
