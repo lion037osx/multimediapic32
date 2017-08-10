@@ -181,6 +181,7 @@ time=read_buff_rtcc(ADDR_SEC);
     if(time!=tmp)
     {
         rtcc=puts_uart_time();
+        if((time>>7)!=(tmp>>7))
         draw_clock(rtcc);
         tmp=time;
         return TRUE;

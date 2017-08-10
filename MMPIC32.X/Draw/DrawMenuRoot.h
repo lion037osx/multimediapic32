@@ -26,8 +26,21 @@ USERS,
 STRLEN_MENU        
 }MenuOrigin_t;
 
-bool menumMaster(int flag);
+typedef enum config{
+    TIME,
+    WIFI           
+}CONFIG_t;
 
+typedef enum wifi_config{
+    IP,
+    NETMASK,
+    PORT            
+}WIFI_CFG;
+
+
+
+bool menumMaster(int flag);
+void drawInitMenu(void);
 #ifdef	__cplusplus
 }
 #endif

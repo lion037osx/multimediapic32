@@ -1,14 +1,11 @@
 #include "DrawMenuRoot.h"
 #include "DrawIcons.h"
 #include "../ConfigHardware.h"
-#include <plib.h>
 #include "../Graphics/Colors.h"
-//#include "../Graphics/Tft.h"
-#include <GenericTypeDefs.h>
 #include "../Graphics/Ssd1963.h"
-
 #include <stdint.h>
-
+#include <plib.h>
+#include <GenericTypeDefs.h>
 
 #include "../icons/battery32x32.h"
 #include "../icons/check32.h"
@@ -20,25 +17,20 @@
 #include "../icons/users32.h"
 #include "../icons/wrench32.h"  
 
-
 WORD setColorClearIcon(){
-//_color=COLOR_BACKGROUND;
-return (COLOR_BACKGROUND);
+    return (GRAY4);
+    //return (COLOR_BACKGROUND);
 }
 
 WORD setColorFrontIcon(){
-
-//return (COLOR_FRONT_ICON);
-    return (BRIGHTRED);
+    return (LIGHTGREEN);
 }
 
 bool menumMaster(int flag){
     
     static int menu=0;
-    static UINT start_left=(DISP_HOR_RESOLUTION/(STRLEN_MENU+2));
-    static int toolBarVert = DISP_VER_RESOLUTION - 64;
-    //WORD color;
-    
+    static UINT startLeft=(DISP_HOR_RESOLUTION/(STRLEN_MENU+2));
+    static int toolBarVert = DISP_VER_RESOLUTION - 48;  
       if(get_portb4()==0 || flag==TRUE){
           
           
@@ -47,28 +39,28 @@ bool menumMaster(int flag){
         switch (menu-1){
 
             case BATTERY:
-                draw_icon( start_left + (BATTERY*start_left) ,toolBarVert ,(void *)&battery,setColorClearIcon());
+                draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorClearIcon());
                     break;
             case CHECK:   
-                draw_icon( start_left + (CHECK*start_left),toolBarVert ,(void *)&check,setColorClearIcon());
+                draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorClearIcon());
                     break;        
             case SUN:       
-                draw_icon( start_left + (SUN*start_left),toolBarVert ,(void *)&sun32,setColorClearIcon());
+                draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorClearIcon());
                     break;
             case HOUSE:       
-                draw_icon( start_left + (HOUSE*start_left),toolBarVert ,(void *)&globe32,setColorClearIcon());
+                draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorClearIcon());
                     break;
             case CONFIG:       
-                draw_icon( start_left + (CONFIG*start_left),toolBarVert ,(void *)&cogs32,setColorClearIcon());
+                draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorClearIcon());
                     break;
             case DATABASE:       
-                draw_icon( start_left + (DATABASE*start_left),toolBarVert ,(void *)&db32,setColorClearIcon());
+                draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorClearIcon());
                     break;
             case TOOLS:       
-                draw_icon( start_left + (TOOLS*start_left) ,toolBarVert ,(void *)&wrench32,setColorClearIcon());
+                draw_icon( startLeft + (TOOLS*startLeft) ,toolBarVert ,(void *)&wrench32,setColorClearIcon());
                     break;
             case USERS:       
-                draw_icon( start_left + (USERS*start_left) ,toolBarVert ,(void *)&users32,setColorClearIcon());
+                draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorClearIcon());
                     break;
             default:
                     break;
@@ -77,28 +69,28 @@ bool menumMaster(int flag){
         switch (menu){
 
             case BATTERY:
-                draw_icon( start_left + (BATTERY*start_left) ,toolBarVert ,(void *)&battery,setColorFrontIcon());
+                draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorFrontIcon());
                     break;
             case CHECK:   
-                draw_icon( start_left + (CHECK*start_left),toolBarVert ,(void *)&check,setColorFrontIcon());
+                draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorFrontIcon());
                     break;        
             case SUN:       
-                draw_icon( start_left + (SUN*start_left),toolBarVert ,(void *)&sun32,setColorFrontIcon());
+                draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorFrontIcon());
                     break;
             case HOUSE:                                       
-                draw_icon( start_left + (HOUSE*start_left),toolBarVert ,(void *)&globe32,setColorFrontIcon());
+                draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorFrontIcon());
                     break;
             case CONFIG:       
-                draw_icon( start_left + (CONFIG*start_left),toolBarVert ,(void *)&cogs32,setColorFrontIcon());
+                draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorFrontIcon());
                     break;
             case DATABASE:       
-                draw_icon( start_left + (DATABASE*start_left),toolBarVert ,(void *)&db32,setColorFrontIcon());
+                draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorFrontIcon());
                     break;
             case TOOLS:       
-                draw_icon( start_left + (TOOLS*start_left) ,toolBarVert ,(void *)&wrench32,setColorFrontIcon());
+                draw_icon( startLeft + (TOOLS*startLeft) ,toolBarVert ,(void *)&wrench32,setColorFrontIcon());
                     break;
             case USERS:       
-                draw_icon( start_left + (USERS*start_left) ,toolBarVert ,(void *)&users32,setColorFrontIcon());
+                draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorFrontIcon());
                     break;
             default://menu=0;
                     break;
@@ -111,4 +103,21 @@ bool menumMaster(int flag){
       else {
           return (FALSE);
       }
+}
+
+
+void drawInitMenu(void){
+    static int rigth;
+    rigth=9;
+    while( rigth-- )menumMaster(TRUE);
+}
+
+void config(int select){
+
+switch(select){
+
+    
+}    
+    
+    
 }

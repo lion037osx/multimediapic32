@@ -11,6 +11,7 @@
 void run(void){
 UARTPutString("Welcome my app\r\n");
 home_draw();
+drawInitMenu();
 while(1){
         
            LED_RA0=0;
@@ -19,5 +20,5 @@ while(1){
 }
 
 void updateClock(void){
-if(func_clock()){LED_RA1=~LED_RA1;} 
+if(func_clock()){LED_RA1=~LED_RA1;}
 }
