@@ -18,12 +18,12 @@
 #include "../icons/wrench32.h"  
 
 WORD setColorClearIcon(){
-    return (GRAY4);
+    return (GRAY1);
     //return (COLOR_BACKGROUND);
 }
 
 WORD setColorFrontIcon(){
-    return (LIGHTGREEN);
+    return (BLUE);
 }
 
 bool menumMaster(int flag){
