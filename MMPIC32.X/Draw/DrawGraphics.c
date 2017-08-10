@@ -3,9 +3,10 @@
 
 //#include <GenericTypeDefs.h>
 //#include "Colors.h"
-#include "ConfigHardware.h"
-#include "Graphics/Ssd1963.h"
-#include "Graphics/Tft.h"
+#include "../ConfigHardware.h"
+#include "../Graphics/Ssd1963.h"
+#include "../Graphics/Tft.h"
+
 
 void buttonSelect(UINT8 select){
 static UINT16 start_y,end_y;
@@ -83,26 +84,8 @@ void init_buttons_draw(void){
 drawButtons();
 }
 
-void draw_icon(WORD start_x ,WORD start_y ,BYTE *bmp){    
-static WORD search_i,pixel_y,pixel_x,strlen_x,strlen_y;
 
-strlen_x=(bmp[5]<<8)|bmp[4];
-pixel_y=strlen_y=(bmp[3]<<8)|bmp[2];
-search_i=18;
 
-while(pixel_y--){
-    pixel_x=0;  
-    while(pixel_x<strlen_x){        
-            _color=((bmp[search_i+1]<<8)&0XFF00|(bmp[search_i]&0xFF));   
-            if(_color<WHITE){             
-                _color=GRAY4;
-                PutPixel( (pixel_x+start_x) , (pixel_y+start_y) );          
-            }
-         search_i=search_i+2;
-         pixel_x++;                      
-        }
-    }
-}
 
 
 void home_draw(void ){
@@ -112,7 +95,7 @@ void home_draw(void ){
     _color=COLOR_BACKGROUND;
     ClearDevice();
     drawText();
-
+/*
     draw_icon( start_x ,272-64 ,(void *)&battery); start_x=start_x+48;
     draw_icon( start_x ,272-64 ,(void *)&check); start_x=start_x+48;
     draw_icon( start_x ,272-64 ,(void *)&sun32);start_x=start_x+48;
@@ -122,4 +105,5 @@ void home_draw(void ){
     draw_icon( start_x ,272-64 ,(void *)&wrench32);start_x=start_x+48;
     draw_icon( start_x ,272-64 ,(void *)&users32);start_x=start_x+48;      
 //return;
+ */
 }

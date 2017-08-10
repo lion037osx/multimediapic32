@@ -1,5 +1,7 @@
 build/default/production/run.o:  \
 run.c  \
-DrawGraphics.h  \
+Draw/DrawGraphics.h  \
  clock/setttingsRtcc.h  \
-ConfigHardware.h 
+ConfigHardware.h  \
+run.h  \
+Draw/DrawMenuRoot.h 

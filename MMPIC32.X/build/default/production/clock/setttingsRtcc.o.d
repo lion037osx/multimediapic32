@@ -5,5 +5,5 @@ clock/ds1307rtcc.h  \
 clock/../ConfigHardware.h  \
  clock/../typedefSettings.h  \
 clock/../SystemClock.h  \
- clock/../DrawGraphics.h  \
-clock/../HardwareProfile.h 
+ clock/../HardwareProfile.h  \
+clock/../Draw/DrawGraphics.h 

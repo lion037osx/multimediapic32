@@ -1,10 +1,10 @@
-#include "GOLFont.h"
-#include "Primitive.h"
+#include "../GOLFont.h"
+#include "../Primitive.h"
 //#include "debug.h"
-#include "clock/setttingsRtcc.h"
+#include "../clock/setttingsRtcc.h"
 #include "DrawGraphics.h"
 #include "DrawText.h"
-#include "Graphics/Ssd1963.h"
+#include "../Graphics/Ssd1963.h"
 //#include <stdlib.h>
 //#include <stdio.h>
 //#include <string.h>

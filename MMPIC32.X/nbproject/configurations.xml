@@ -10,6 +10,12 @@
         <itemPath>clock/ds1307rtcc.h</itemPath>
         <itemPath>clock/drvI2C.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="Draw" displayName="Draw" projectFiles="true">
+        <itemPath>Draw/DrawGraphics.h</itemPath>
+        <itemPath>Draw/DrawIcons.h</itemPath>
+        <itemPath>Draw/DrawText.h</itemPath>
+        <itemPath>Draw/DrawMenuRoot.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.h</itemPath>
         <itemPath>drivers/spiTsc2046.h</itemPath>
@@ -43,10 +49,7 @@
       <itemPath>Primitive.h</itemPath>
       <itemPath>TimeDelay.h</itemPath>
       <itemPath>typedefSettings.h</itemPath>
-      <itemPath>DrawGraphics.h</itemPath>
-      <itemPath>DrawText.h</itemPath>
       <itemPath>interrupts.h</itemPath>
-      <itemPath>DrawIcons.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -61,6 +64,12 @@
         <itemPath>clock/ds1307.c</itemPath>
         <itemPath>clock/drvI2C.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="Draw" displayName="Draw" projectFiles="true">
+        <itemPath>Draw/DrawGraphics.c</itemPath>
+        <itemPath>Draw/DrawText.c</itemPath>
+        <itemPath>Draw/DrawMenuRoot.c</itemPath>
+        <itemPath>Draw/DrawIcon.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.c</itemPath>
         <itemPath>drivers/spiTsc2046.c</itemPath>
@@ -74,8 +83,6 @@
       <itemPath>run.c</itemPath>
       <itemPath>GOLFont.c</itemPath>
       <itemPath>TimeDelay.c</itemPath>
-      <itemPath>DrawGraphics.c</itemPath>
-      <itemPath>DrawText.c</itemPath>
       <itemPath>interrupts.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -85,10 +92,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>icons</Elem>
-    <Elem>Graphics</Elem>
-    <Elem>clock</Elem>
-    <Elem>drivers</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

@@ -13,6 +13,7 @@ ConfigInterrupts();
 ConfigBackligth();
 ConfigHardwareLeds();
 ConfigClearAllLeds();
+ConfigButtonRB4();
 UARTInit();
 ResetDevice();//graphics function
 _color=COLOR_BACKGROUND;

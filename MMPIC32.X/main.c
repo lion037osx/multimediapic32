@@ -10,6 +10,8 @@
 
 #include "System.h"
 
+static unsigned int count=0;
+
 int main(void){
 inits();    
 run();  
@@ -26,13 +28,17 @@ void __ISR(_EXTERNAL_1_VECTOR,IPL7AUTO)  ExtInt1_ISR(void){
 
 void __ISR(_TIMER_1_VECTOR,IPL6SOFT) Timer1Handler(void)
 {
-LED_RA1=~LED_RA1;
+    if(count>=500){
+    updateClock();
+    count=0;
+    }
+count++;
 IFS0bits.T1IF = 0;
 }
 #endif
 
 #ifdef __TIMER2__
-void __ISR(_TIMER_2_VECTOR,ipl6AUTO)Timer1Handler(void)
+void __ISR(_TIMER_2_VECTOR,ipl6AUTO) Timer1Handler(void)
 {
     IFS0bits.T2IF = 0;
 }

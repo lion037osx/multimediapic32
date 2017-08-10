@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c DrawGraphics.c DrawText.c interrupts.c
+SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c interrupts.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/DrawGraphics.o ${OBJECTDIR}/DrawText.o ${OBJECTDIR}/interrupts.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/GOLFont.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/DrawGraphics.o.d ${OBJECTDIR}/DrawText.o.d ${OBJECTDIR}/interrupts.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/GOLFont.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/interrupts.o.d ${OBJECTDIR}/Draw/DrawGraphics.o.d ${OBJECTDIR}/Draw/DrawText.o.d ${OBJECTDIR}/Draw/DrawMenuRoot.o.d ${OBJECTDIR}/Draw/DrawIcon.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/DrawGraphics.o ${OBJECTDIR}/DrawText.o ${OBJECTDIR}/interrupts.o
+OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o
 
 # Source Files
-SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c DrawGraphics.c DrawText.c interrupts.c
+SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c interrupts.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c
 
 
 CFLAGS=
@@ -184,23 +184,35 @@ ${OBJECTDIR}/TimeDelay.o: TimeDelay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/TimeDelay.o 
 	@${FIXDEPS} "${OBJECTDIR}/TimeDelay.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/TimeDelay.o.d" -o ${OBJECTDIR}/TimeDelay.o TimeDelay.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/DrawGraphics.o: DrawGraphics.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DrawGraphics.o.d 
-	@${RM} ${OBJECTDIR}/DrawGraphics.o 
-	@${FIXDEPS} "${OBJECTDIR}/DrawGraphics.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/DrawGraphics.o.d" -o ${OBJECTDIR}/DrawGraphics.o DrawGraphics.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/DrawText.o: DrawText.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DrawText.o.d 
-	@${RM} ${OBJECTDIR}/DrawText.o 
-	@${FIXDEPS} "${OBJECTDIR}/DrawText.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/DrawText.o.d" -o ${OBJECTDIR}/DrawText.o DrawText.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/interrupts.o: interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/interrupts.o.d 
 	@${RM} ${OBJECTDIR}/interrupts.o 
 	@${FIXDEPS} "${OBJECTDIR}/interrupts.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/interrupts.o.d" -o ${OBJECTDIR}/interrupts.o interrupts.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawGraphics.o: Draw/DrawGraphics.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawGraphics.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawGraphics.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawGraphics.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawGraphics.o.d" -o ${OBJECTDIR}/Draw/DrawGraphics.o Draw/DrawGraphics.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawText.o: Draw/DrawText.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawText.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawText.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawText.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawText.o.d" -o ${OBJECTDIR}/Draw/DrawText.o Draw/DrawText.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawMenuRoot.o: Draw/DrawMenuRoot.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawMenuRoot.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawMenuRoot.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawMenuRoot.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawMenuRoot.o.d" -o ${OBJECTDIR}/Draw/DrawMenuRoot.o Draw/DrawMenuRoot.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawIcon.o: Draw/DrawIcon.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawIcon.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawIcon.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawIcon.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawIcon.o.d" -o ${OBJECTDIR}/Draw/DrawIcon.o Draw/DrawIcon.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/clock/rtcc.o: clock/rtcc.c  nbproject/Makefile-${CND_CONF}.mk
@@ -281,23 +293,35 @@ ${OBJECTDIR}/TimeDelay.o: TimeDelay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/TimeDelay.o 
 	@${FIXDEPS} "${OBJECTDIR}/TimeDelay.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/TimeDelay.o.d" -o ${OBJECTDIR}/TimeDelay.o TimeDelay.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/DrawGraphics.o: DrawGraphics.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DrawGraphics.o.d 
-	@${RM} ${OBJECTDIR}/DrawGraphics.o 
-	@${FIXDEPS} "${OBJECTDIR}/DrawGraphics.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/DrawGraphics.o.d" -o ${OBJECTDIR}/DrawGraphics.o DrawGraphics.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/DrawText.o: DrawText.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DrawText.o.d 
-	@${RM} ${OBJECTDIR}/DrawText.o 
-	@${FIXDEPS} "${OBJECTDIR}/DrawText.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/DrawText.o.d" -o ${OBJECTDIR}/DrawText.o DrawText.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/interrupts.o: interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/interrupts.o.d 
 	@${RM} ${OBJECTDIR}/interrupts.o 
 	@${FIXDEPS} "${OBJECTDIR}/interrupts.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/interrupts.o.d" -o ${OBJECTDIR}/interrupts.o interrupts.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawGraphics.o: Draw/DrawGraphics.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawGraphics.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawGraphics.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawGraphics.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawGraphics.o.d" -o ${OBJECTDIR}/Draw/DrawGraphics.o Draw/DrawGraphics.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawText.o: Draw/DrawText.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawText.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawText.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawText.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawText.o.d" -o ${OBJECTDIR}/Draw/DrawText.o Draw/DrawText.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawMenuRoot.o: Draw/DrawMenuRoot.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawMenuRoot.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawMenuRoot.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawMenuRoot.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawMenuRoot.o.d" -o ${OBJECTDIR}/Draw/DrawMenuRoot.o Draw/DrawMenuRoot.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Draw/DrawIcon.o: Draw/DrawIcon.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Draw" 
+	@${RM} ${OBJECTDIR}/Draw/DrawIcon.o.d 
+	@${RM} ${OBJECTDIR}/Draw/DrawIcon.o 
+	@${FIXDEPS} "${OBJECTDIR}/Draw/DrawIcon.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Draw/DrawIcon.o.d" -o ${OBJECTDIR}/Draw/DrawIcon.o Draw/DrawIcon.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 endif
 

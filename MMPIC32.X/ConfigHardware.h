@@ -40,6 +40,7 @@ extern "C" {
 //TRISAbits.TRISA1=0;TRISAbits.TRISA2=0;TRISAbits.TRISA3=0;\
 //TRISAbits.TRISA4=0;TRISAbits.TRISA5=0;TRISAbits.TRISA6=0;TRISAbits.TRISA7=0;}
     
+#define ConfigButtonRB4()     {TRISBbits.TRISB4=1;PORTSetPinsDigitalIn(IOPORT_B, BIT_4);}    
 /*Config  pin backligth */
 #define BACKLIGTH PORTDbits.RD0 
 #define  Back_ligth_off() {BACKLIGTH=0;}

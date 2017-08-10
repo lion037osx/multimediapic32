@@ -12,6 +12,8 @@
 extern "C" {
 #endif
     
+#include <GenericTypeDefs.h>
+    
 void draw_clock(MCP79401 rtcc);
 
 WORD func_draw_txt(WORD start_x , WORD start_y , BYTE ascii ,WORD color_font);

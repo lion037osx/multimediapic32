@@ -7,8 +7,9 @@
 #include "../typedefSettings.h"
 //#include "../DrawText.h"
 #include "../SystemClock.h"
-#include "../DrawGraphics.h"
+//#include "../DrawGraphics.h"
 #include "../HardwareProfile.h"
+#include "../Draw/DrawGraphics.h"
 
 
 

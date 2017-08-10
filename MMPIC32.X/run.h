@@ -12,6 +12,7 @@
 extern "C" {
 #endif
     
+void updateClock(void);    
 void run(void);
 
 

@@ -45,7 +45,7 @@ T1CONbits.ON = 1;     // Start the timer
 }
 
 void ConfigInterruptTimer2(void){
-//#ifdef __TIMER2__    
+#ifdef __TIMER2__    
 T2CON = 0x0;           // Stop the timer and clear the control register,
 // prescaler at 1:1,internal clock source
 TMR2 = 0x0;            // Clear the timer register 
@@ -56,7 +56,7 @@ IPC2bits.T2IS=1;  // Set subpriority level = 1
 IFS0CLR = 0x00000100;  // Clear the timer interrupt status flag 
 IEC0SET = 0x00000100;  // Enable timer interrupts
 T2CONSET = 0x8000;     // Start the timer
-//#endif
+#endif
 }
 
 void ConfigInterruptExternal1(void){

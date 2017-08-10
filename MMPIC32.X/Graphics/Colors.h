@@ -49,6 +49,7 @@ extern "C" {
 
 #define COLOR_BACKGROUND RGB565CONVERT(254,  254,    254)
 #define COLOR_FONT_CLOCK GRAY4    
+#define COLOR_FRONT_ICON GRAY6    
     
     
 #ifdef	__cplusplus
