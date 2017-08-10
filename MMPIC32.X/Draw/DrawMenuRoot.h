@@ -22,10 +22,11 @@ HOUSE,
 CONFIG,
 DATABASE,
 TOOLS,
-USERS            
+USERS,
+STRLEN_MENU        
 }MenuOrigin_t;
 
-bool menumMaster(void);
+bool menumMaster(int flag);
 
 #ifdef	__cplusplus
 }

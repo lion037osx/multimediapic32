@@ -18,8 +18,12 @@ run();
 }
 
 #ifdef __INTERRUPT_EXTERNAL1__    
-void __ISR(_EXTERNAL_1_VECTOR,IPL7AUTO)  ExtInt1_ISR(void){
+void __ISR(_EXTERNAL_1_VECTOR,IPL7SOFT)  ExtInt1_ISR(void){
+    static int flag;
     LED_RA0=1;
+    flag=1;
+    //while(IFS0bits.INT1IF==TRUE);
+    menumMaster(flag);
     IFS0bits.INT1IF=0;  
 }
 #endif

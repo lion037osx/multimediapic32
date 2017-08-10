@@ -14,7 +14,7 @@ home_draw();
 while(1){
         
            LED_RA0=0;
-           if(menumMaster());
+           if(menumMaster(FALSE));
     }
 }
 
