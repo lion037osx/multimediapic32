@@ -52,8 +52,8 @@ _color=color;
 void drawButtons(void){
 static CONFIG_BUTTON_t button;    
 
-button.setColorFront=GRAY6;
-button.setColorBack=GRAY1;
+button.setColorFront=COLOR_FRONT_BUTTON;
+button.setColorBack=COLOR_BACK_BUTTON;
 button.start_x=0;
 button.end_x=WIDTH_SCREEN/4;
 button.start_y=HEIGHT_SCREEN-64;

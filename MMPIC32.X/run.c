@@ -11,6 +11,9 @@
 void run(void){
 UARTPutString("Welcome my app\r\n");
 home_draw();
+
+draw_tool_bar();
+
 drawInitMenu();
 while(1){
         

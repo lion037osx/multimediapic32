@@ -39,7 +39,11 @@ static unsigned int count=0;
     }
 count++;
     if(get_portb4()==0)counterTimer1++;
-    if(counterTimer1>=1000)
+    else if((get_portb4()==1) && (counterTimer1<2500)){
+    counterTimer1=0;
+    }
+
+    if(counterTimer1>=2500)
     {
         counterTimer1=0;
         flagSetConfig++;

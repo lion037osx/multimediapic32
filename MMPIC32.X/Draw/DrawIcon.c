@@ -29,6 +29,7 @@ while(pixel_y--){
             _color=((bmp[search_i+1]<<8)&0XFF00|(bmp[search_i]&0xFF));   
             if(_color<WHITE)
             {             
+                //_color=color;
                 _color=color;
                 PutPixel( (pixel_x+start_x) , (pixel_y+start_y) );          
             }

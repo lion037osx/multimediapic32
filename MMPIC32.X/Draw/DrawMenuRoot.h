@@ -68,6 +68,7 @@ void drawInitMenu(void);
 void configTime(void);
 void configWifi(void);
 void configAll(void);
+void draw_tool_bar(void);
 
 #ifdef	__cplusplus
 }

@@ -134,8 +134,8 @@ static WORD deb;
     y=48;
     //str_draw_txt((480/2)-48,96,"23:30");
    
-    //deb=str_draw_txt(4,4," @Projects Graphics lion OSX... ",GRAY2);
-    deb=str_draw_txt(4,4,"Domotics House ...",GRAY2);
+    deb=str_draw_txt(4,4," @Projects Graphics pic32 QT lion OSX... ",COLOR_FRONT_TEXT);
+//    deb=str_draw_txt(4,4,"Domotics House ...",GRAY2);
         //deb=str_draw_txt(4,4,"sStT",GRAY1);
         //deb=str_draw_txt(1,4,"0123456789",GRAY1);
          //deb=str_draw_txt(1,32,"abcdefghijklmnopqrstuvwxyz",GRAY1);

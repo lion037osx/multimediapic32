@@ -29,7 +29,7 @@ extern "C" {
 #endif 
     
 ///*****************************    ENABLE DRAWS    ***************************///
-#define __DRAW_CLOCK__
+ #define __DRAW_CLOCK__
 //#define __DEBUG__    
     
 //#define HEIGHT_SCREEN DISP_VER_RESOLUTION    

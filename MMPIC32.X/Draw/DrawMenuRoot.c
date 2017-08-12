@@ -23,12 +23,16 @@
 extern UINT16 flagSetConfig;
 
 WORD setColorClearIcon(){
-    return (GRAY4);
-    //return (COLOR_BACKGROUND);
+    //return (COLOR_BACK_ICON);
+    return (COLOR_BACKGROUND);
+}
+
+WORD setColorIconOff(){
+    return (COLOR_ICON_OFF);
 }
 
 WORD setColorFrontIcon(){
-    return (LIGHTGREEN);
+    return (COLOR_ICON_ON);
 }
 
 bool menumMaster(int flag){
@@ -46,32 +50,32 @@ bool menumMaster(int flag){
         switch (menu-1){
 
             case BATTERY:
-                draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorClearIcon());
+                draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorIconOff());
                     break;
             case CHECK:   
-                draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorClearIcon());
+                draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorIconOff());
                     break;        
             case SUN:       
-                draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorClearIcon());
+                draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorIconOff());
                     break;
             case HOUSE:       
-                draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorClearIcon());
+                draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorIconOff());
                     break;
             case CONFIG: 
                 LED_RA2=~LED_RA2;
                 sprintf(str,"SET CONFIG:%d\r\n",flagSetConfig);
 
                 if(flagSetConfig>=1){UARTPutString(str);flagSetConfig=0;menu--;configAll();}
-                draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorClearIcon());
+                draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorIconOff());
                     break;
             case DATABASE:       
-                draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorClearIcon());
+                draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorIconOff());
                     break;
             case TOOLS:       
-                draw_icon( startLeft + (TOOLS*startLeft) ,toolBarVert ,(void *)&wrench32,setColorClearIcon());
+                draw_icon( startLeft + (TOOLS*startLeft) ,toolBarVert ,(void *)&wrench32,setColorIconOff());
                     break;
             case USERS:       
-                draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorClearIcon());
+                draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorIconOff());
                     break;
             default:
                     break;
@@ -132,33 +136,33 @@ static MCP79401 clock;
 
 //clock=get_time();
 
-clock.hour=0x22;
-clock.min=0x28;
+clock.hour=0x00;
+clock.min=0x00;
 
 
-clock.year=0x17;
-clock.month=0x08;
-clock.date=0x10;
+clock.year=0x00;
+clock.month=0x01;
+clock.date=0x01;
 
     switch(select){
         case CFG_YEAR:
-            clock.year=0x17;
+            clock.year=0x00;
                 UARTPutString("function config Year\r\n");
             break;
         case CFG_MONTH:
-            clock.month=0x08;
+            clock.month=0x01;
                 UARTPutString("function config Month\r\n");
             break;
         case CFG_DATE:
-            clock.date=0x10;
+            clock.date=0x01;
                 UARTPutString("function config Date\r\n");
             break;
         case CFG_HOUR:
-            clock.hour=0x22;
+            clock.hour=0x00;
                 UARTPutString("function config Hour\r\n");
             break;
         case CFG_MIN:
-            clock.min=0x30;
+            clock.min=0x00;
                 UARTPutString("function config Min\r\n");
             break;
         case CFG_SECOND:
@@ -237,5 +241,23 @@ static UINT8 select=0;
     select++;
     if(select>=CFG_N_MAX){
         select=0;
+    }
+}
+
+
+void draw_tool_bar(void){
+
+static WORD pixel_y,strlen_x,x,y;
+_color=COLOR_TOOL_BAR;
+strlen_x=480;
+y=272-64;
+
+while(y<272){
+    x=0;  
+    while(x<strlen_x){          
+            PutPixel( x, y );          
+            x++;                      
+        }
+    y++;
     }
 }
