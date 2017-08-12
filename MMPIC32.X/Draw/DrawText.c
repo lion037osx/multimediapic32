@@ -1,4 +1,5 @@
-#include "../GOLFont.h"
+
+//#include "../fonts/GOLFont.h"
 #include "../Primitive.h"
 //#include "debug.h"
 #include "../clock/setttingsRtcc.h"
@@ -10,12 +11,17 @@
 //#include <string.h>
 #include <p32xxxx.h>
 //#include <plib.h>
+//#include "../fonts/arial_size8_c32.h"
+
+
 
 
 #define STRLEN(BYTES)   3
-#define byte __GOLFontDefault
 
-static const BYTE __GOLFontDefault[] __attribute__((aligned(2)));
+#define font __GOLFontDefault
+
+extern const BYTE __GOLFontDefault[] __attribute__((aligned(2)));
+
 
 void debug(BYTE *p , DWORD value){
 #ifdef __DEBUG__    
@@ -27,28 +33,37 @@ void debug(BYTE *p , DWORD value){
 }
 
 WORD func_draw_txt(WORD start_x , WORD start_y , BYTE ascii ,WORD font_color){
-static FONT_HEADER font;
+static FONT_HEADER fontHeader;
 static WORD width;
 static DWORD address_ascii;
 static DWORD array_pix;
 static WORD x,y;
 static WORD counter_byte;
+static int firstChar;
+#ifdef __DEBUG__ 
+debug("ascii :",ascii);
 
-font.firstChar= byte[3]<<8 | byte[2];
-font.height=byte[7]<<8 | byte[6];
+    UARTPutChar(0x40);
+    UARTPutChar(0x20);
+    UARTPutChar(ascii);
+    UARTPutChar(0x20);
+#endif            
 
+fontHeader.firstChar= font[3]<<8 | font[2];
+fontHeader.height=font[7]<<8 | font[6];
+firstChar=fontHeader.firstChar;
 #ifdef __DEBUG__ 
 debug ("\r\n",0x00);
-debug("font.firstChar",font.firstChar);
-debug("height",font.height);
+debug("font.firstChar",fontHeader.firstChar);
+debug("height",fontHeader.height);
 #endif
 
-width=byte[0x08+((ascii-28)*4)];
+width=font[0x08+((ascii-firstChar)*4)];
 
 debug("Width",width);
 
-if( (width>=0x00) && (width<=0x07)){counter_byte=1;}
-else if( (width>=0x08) && (width<=0x10)){counter_byte=2;}
+if( (width>=0x00) && (width<=0x08)){counter_byte=1;}
+else if( (width>=0x09) && (width<=0x10)){counter_byte=2;}
 else if( (width>=0x11) && (width<=0x18) ){counter_byte=3;}
 else{counter_byte=0;}
 
@@ -56,11 +71,13 @@ else{counter_byte=0;}
     debug("counter_byte:", counter_byte );
 #endif
 
-address_ascii=((byte[0x3+0x08+((ascii-28)*4)])<<16)&0xFF0000|( (byte[0x2+0x08+((ascii-28)*4)])<<8)&0xFF00 | (byte[0x1+0x08+((ascii-28)*4)]&0xFF);
+address_ascii=((font[0x3+0x08+((ascii-firstChar)*4)])<<16)&0xFF0000|( ( font[0x2+0x08+((ascii-firstChar)*4)])<<8)&0xFF00 | ( font[0x1+0x08+((ascii-firstChar)*4)]&0xFF);
+
+
 #ifdef __DEBUG__ 
-    debug("byte 2" , byte[0x3+0x08+((ascii-28)*4)]);
-    debug("byte 1" , byte[0x2+0x08+((ascii-28)*4)]);
-    debug("byte 0" , (byte[0x1+0x08+((ascii-28)*4)])&0xFF);
+    debug("font 2" , font[0x3+0x08+((ascii-firstChar)*4)]);
+    debug("font 1" , font[0x2+0x08+((ascii-firstChar)*4)]);
+    debug("font 0" , ( font[0x1+0x08+((ascii-firstChar)*4)])&0xFF);
 #endif    
    {
 
@@ -68,17 +85,17 @@ address_ascii=((byte[0x3+0x08+((ascii-28)*4)])<<16)&0xFF0000|( (byte[0x2+0x08+((
         debug("address" , address_ascii);
     #endif
     
-    for(y=start_y;y<(font.height+start_y);y++)
+    for(y=start_y;y<(fontHeader.height+start_y);y++)
     {
     switch(counter_byte){
         case 1:
-                    array_pix =  (byte[address_ascii])&0xFF;
+                    array_pix =  (font[address_ascii])&0xFF;
             break;
         case 2:
-                    array_pix = (byte[address_ascii+1] << 8)%0xFF00 | (byte[address_ascii])&0xFF;
+                    array_pix = (font[address_ascii+1] << 8)%0xFF00 | (font[address_ascii])&0xFF;
             break;
         case 3:
-                    array_pix = (byte[address_ascii+2] <<16)&0xFF0000 | (byte[address_ascii+1]<<8)&0xFF00 | (byte[address_ascii])&0xFF;
+                    array_pix = (font[address_ascii+2] <<16)&0xFF0000 | (font[address_ascii+1]<<8)&0xFF00 | (font[address_ascii])&0xFF;
             break;
             
         default :
@@ -103,8 +120,9 @@ return width;
 }
 
 WORD str_draw_txt(WORD x,WORD y,char* str,WORD color_font){
+
     while(*str)
-    x=x+func_draw_txt(x,y,*str++,color_font);    
+    x=x+func_draw_txt(x,y,(char) *str++,color_font);    
 return x;
 }
 
@@ -115,7 +133,14 @@ static WORD deb;
     x=48;
     y=48;
     //str_draw_txt((480/2)-48,96,"23:30");
-    deb=str_draw_txt(4,4," @ProjecT Graphics lion OSX ... ",GRAY6);
+   
+    //deb=str_draw_txt(4,4," @Projects Graphics lion OSX... ",GRAY2);
+    deb=str_draw_txt(4,4,"Domotics House ...",GRAY2);
+        //deb=str_draw_txt(4,4,"sStT",GRAY1);
+        //deb=str_draw_txt(1,4,"0123456789",GRAY1);
+         //deb=str_draw_txt(1,32,"abcdefghijklmnopqrstuvwxyz",GRAY1);
+         //deb=str_draw_txt(1,64,"ABCDEFGHIJKLMNOPQRSTUVWXYZ",GRAY1);
+// deb=str_draw_txt(1,96,",.;:{}[]+*-_#$%&/()=?¡¿!|",GRAY1);
     #ifdef __DEBUG__
         debug("value return x:",deb);
     #endif
@@ -126,7 +151,7 @@ static WORD deb;
 void draw_clock(MCP79401 rtcc){
 static BYTE str[32];
 static MCP79401 ram_rtcc;
-  
+#ifdef __DRAW_CLOCK__  
     sprintf(str,"%d.%d%d.%d%d",ram_rtcc.year,(ram_rtcc.month>>4)&0x7,ram_rtcc.month&0xf,(ram_rtcc.date>>4)&0x7,ram_rtcc.date&0xf);
     //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
     str_draw_txt(200,96,str,COLOR_BACKGROUND);
@@ -139,5 +164,5 @@ static MCP79401 ram_rtcc;
     sprintf(str,"%d%d:%d%d",(rtcc.hour>>4)&0x7,rtcc.hour&0xf,(rtcc.min>>4)&0x7,rtcc.min&0xf);    
     str_draw_txt(200,64,str,COLOR_FONT_CLOCK); 
     ram_rtcc=rtcc;
-//return;
+#endif
 }

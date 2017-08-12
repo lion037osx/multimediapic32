@@ -28,6 +28,9 @@ extern "C" {
     //#define __TIMER2__    
 #endif 
     
+///*****************************    ENABLE DRAWS    ***************************///
+#define __DRAW_CLOCK__
+//#define __DEBUG__    
     
 //#define HEIGHT_SCREEN DISP_VER_RESOLUTION    
 //#define WIDTH_SCREEN DISP_HOR_RESOLUTION

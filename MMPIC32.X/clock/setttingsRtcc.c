@@ -290,17 +290,19 @@ void settingsClock(MCP79401 clkTmp){
 	WRITE_RTCC(ADDR_DATE,clkTmp.date);
 	WRITE_RTCC(ADDR_HOUR,clkTmp.hour);
 	WRITE_RTCC(ADDR_MIN,clkTmp.min) ;
-	WRITE_RTCC(ADDR_SEC,START_32KHZ);
+    WRITE_RTCC(ADDR_SEC,clkTmp.sec|START_32KHZ);
+	//WRITE_RTCC(ADDR_SEC,START_32KHZ);
 }
 
 void setClockUart(void){
 MCP79401 clkTmp;
-//strGet   @date 081200222017
+//strGet   @date 08120022201700
 clkTmp.year=((strGet[16]-48)<< 4 ) | strGet[17]-48;// 1char = 49c  : '7' char = 55d
 clkTmp.month=((strGet[6]-48)<< 4 ) | strGet[7]-48;
 clkTmp.date=((strGet[8]-48)<< 4 ) | strGet[9]-48;
 clkTmp.hour=((strGet[10]-48)<< 4 ) | strGet[11]-48;
 clkTmp.min=((strGet[12]-48)<< 4 ) |strGet[13]-48;
+clkTmp.sec=((strGet[18]-48)<< 4 ) |strGet[19]-48;
 
 
 settingsClock(clkTmp);

@@ -20,6 +20,9 @@
         <itemPath>drivers/tsc2046.h</itemPath>
         <itemPath>drivers/spiTsc2046.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
+        <itemPath>fonts/GOLFont.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="Graphics" displayName="Graphics" projectFiles="true">
         <itemPath>Graphics/Colors.h</itemPath>
         <itemPath>Graphics/Ssd1963.h</itemPath>
@@ -45,7 +48,6 @@
       <itemPath>Uart.h</itemPath>
       <itemPath>inits.h</itemPath>
       <itemPath>run.h</itemPath>
-      <itemPath>GOLFont.h</itemPath>
       <itemPath>Primitive.h</itemPath>
       <itemPath>TimeDelay.h</itemPath>
       <itemPath>typedefSettings.h</itemPath>
@@ -75,6 +77,9 @@
         <itemPath>drivers/tsc2046.c</itemPath>
         <itemPath>drivers/spiTsc2046.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
+        <itemPath>fonts/century_size12.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="Graphics" displayName="Graphics" projectFiles="true">
         <itemPath>Graphics/Ssd1963.c</itemPath>
       </logicalFolder>
@@ -82,7 +87,6 @@
       <itemPath>Uart.c</itemPath>
       <itemPath>inits.c</itemPath>
       <itemPath>run.c</itemPath>
-      <itemPath>GOLFont.c</itemPath>
       <itemPath>TimeDelay.c</itemPath>
       <itemPath>interrupts.c</itemPath>
       <itemPath>GlobalVar.c</itemPath>

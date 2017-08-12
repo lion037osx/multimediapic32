@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c interrupts.c GlobalVar.c
+SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c TimeDelay.c interrupts.c GlobalVar.c fonts/century_size12.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/Draw/DrawGraphics.o.d ${OBJECTDIR}/Draw/DrawText.o.d ${OBJECTDIR}/Draw/DrawMenuRoot.o.d ${OBJECTDIR}/Draw/DrawIcon.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/GOLFont.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/interrupts.o.d ${OBJECTDIR}/GlobalVar.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o ${OBJECTDIR}/fonts/century_size12.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/Draw/DrawGraphics.o.d ${OBJECTDIR}/Draw/DrawText.o.d ${OBJECTDIR}/Draw/DrawMenuRoot.o.d ${OBJECTDIR}/Draw/DrawIcon.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/interrupts.o.d ${OBJECTDIR}/GlobalVar.o.d ${OBJECTDIR}/fonts/century_size12.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/GOLFont.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o
+OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o ${OBJECTDIR}/fonts/century_size12.o
 
 # Source Files
-SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c GOLFont.c TimeDelay.c interrupts.c GlobalVar.c
+SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c drivers/tsc2046.c drivers/spiTsc2046.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c TimeDelay.c interrupts.c GlobalVar.c fonts/century_size12.c
 
 
 CFLAGS=
@@ -196,12 +196,6 @@ ${OBJECTDIR}/run.o: run.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/run.o 
 	@${FIXDEPS} "${OBJECTDIR}/run.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/run.o.d" -o ${OBJECTDIR}/run.o run.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/GOLFont.o: GOLFont.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/GOLFont.o.d 
-	@${RM} ${OBJECTDIR}/GOLFont.o 
-	@${FIXDEPS} "${OBJECTDIR}/GOLFont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/GOLFont.o.d" -o ${OBJECTDIR}/GOLFont.o GOLFont.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/TimeDelay.o: TimeDelay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/TimeDelay.o.d 
@@ -219,6 +213,12 @@ ${OBJECTDIR}/GlobalVar.o: GlobalVar.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/GlobalVar.o.d 
 	@${RM} ${OBJECTDIR}/GlobalVar.o 
 	@${FIXDEPS} "${OBJECTDIR}/GlobalVar.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/GlobalVar.o.d" -o ${OBJECTDIR}/GlobalVar.o GlobalVar.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/fonts/century_size12.o: fonts/century_size12.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/fonts" 
+	@${RM} ${OBJECTDIR}/fonts/century_size12.o.d 
+	@${RM} ${OBJECTDIR}/fonts/century_size12.o 
+	@${FIXDEPS} "${OBJECTDIR}/fonts/century_size12.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/fonts/century_size12.o.d" -o ${OBJECTDIR}/fonts/century_size12.o fonts/century_size12.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/clock/rtcc.o: clock/rtcc.c  nbproject/Makefile-${CND_CONF}.mk
@@ -311,12 +311,6 @@ ${OBJECTDIR}/run.o: run.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/run.o 
 	@${FIXDEPS} "${OBJECTDIR}/run.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/run.o.d" -o ${OBJECTDIR}/run.o run.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/GOLFont.o: GOLFont.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/GOLFont.o.d 
-	@${RM} ${OBJECTDIR}/GOLFont.o 
-	@${FIXDEPS} "${OBJECTDIR}/GOLFont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/GOLFont.o.d" -o ${OBJECTDIR}/GOLFont.o GOLFont.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/TimeDelay.o: TimeDelay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/TimeDelay.o.d 
@@ -334,6 +328,12 @@ ${OBJECTDIR}/GlobalVar.o: GlobalVar.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/GlobalVar.o.d 
 	@${RM} ${OBJECTDIR}/GlobalVar.o 
 	@${FIXDEPS} "${OBJECTDIR}/GlobalVar.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/GlobalVar.o.d" -o ${OBJECTDIR}/GlobalVar.o GlobalVar.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/fonts/century_size12.o: fonts/century_size12.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/fonts" 
+	@${RM} ${OBJECTDIR}/fonts/century_size12.o.d 
+	@${RM} ${OBJECTDIR}/fonts/century_size12.o 
+	@${FIXDEPS} "${OBJECTDIR}/fonts/century_size12.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/fonts/century_size12.o.d" -o ${OBJECTDIR}/fonts/century_size12.o fonts/century_size12.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 endif
 
