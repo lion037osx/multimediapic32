@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-void drawText(void);
+
     
 #ifdef	__cplusplus
 }

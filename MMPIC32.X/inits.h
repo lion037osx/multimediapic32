@@ -12,6 +12,7 @@
 extern "C" {
 #endif
 
+void configInterruptUart(void);
 void inits(void);
 
 #ifdef	__cplusplus

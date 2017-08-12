@@ -12,7 +12,7 @@
 #include "../Draw/DrawGraphics.h"
 
 
-
+extern BYTE strGet[32];
 void ack_i2c1(void){
 IdleI2C1();
 }
@@ -134,24 +134,15 @@ MCP79401 puts_uart_time(void)
 static MCP79401 rtcc;
 static BYTE str[60];
 
-//static BYTE buff;
-//buff=read_buff_rtcc(OSCON);
-//sprintf(str,"uart OSCON:%d\r\n",buff);  
-//UARTPutString(str);
-
 rtcc.year=read_buff_rtcc(ADDR_YEAR);      
 rtcc.month=read_buff_rtcc(ADDR_MNTH);   	 
 rtcc.date=read_buff_rtcc(ADDR_DATE);   
 rtcc.hour=read_buff_rtcc(ADDR_HOUR); 
 rtcc.min=read_buff_rtcc(ADDR_MIN) ;   	   
 rtcc.sec=read_buff_rtcc(ADDR_SEC);
-rtcc.year=(((rtcc.year>>4)&0x7)*10)+(rtcc.year&0xf);
-//day=(((day>>4)&0x7)*10)+(day&0xf);
-//hour=(((hour>>4)&0x7)*10)+(hour&0xf);
-//min=(((min>>4)&0x7)*10)+(min&0xf);
-//sec=(((sec>>4)&0x7)*10)+(sec&0xf)+;
+
 #ifdef __DEBUG_CLOCK__
-    sprintf(str,"date 20%d/%d%d/%d%d",rtcc.year,(rtcc.month>>4)&0x7,rtcc.month&0xf,(rtcc.date>>4)&0x7,rtcc.date&0xf);
+    sprintf(str,"date 20%X/%d%d/%d%d",rtcc.year,(rtcc.month>>4)&0x7,rtcc.month&0xf,(rtcc.date>>4)&0x7,rtcc.date&0xf);
     UARTPutString(str);
     sprintf(str,"  %d%d:%d%d:%d%d\r\n",(rtcc.hour>>4)&0x7,rtcc.hour&0xf,(rtcc.min>>4)&0x7,rtcc.min&0xf,(rtcc.sec>>4)&0x7,rtcc.sec&0xf);
     UARTPutString(str);
@@ -176,13 +167,20 @@ if(stat)UARTPutString("OSC success!\r\n");
 
 UINT8 func_clock(void){
 static UINT8 time,tmp;
+static MCP79401 rtccTmp;
 static MCP79401 rtcc;
-time=read_buff_rtcc(ADDR_SEC);
+
+rtcc=get_time();
+time=rtcc.sec;
+//time=read_buff_rtcc(ADDR_SEC);
     if(time!=tmp)
     {
         rtcc=puts_uart_time();
-        if((time>>7)!=(tmp>>7))
-        draw_clock(rtcc);
+        if((rtcc.min)!=(rtccTmp.min))
+        {
+            draw_clock(rtcc);
+            rtccTmp=rtcc;
+        }
         tmp=time;
         return TRUE;
     }
@@ -283,4 +281,27 @@ convert=convert+(tmp&0xF);
         break;
     }    
 return (str);    
+}
+
+
+void settingsClock(MCP79401 clkTmp){
+    WRITE_RTCC(ADDR_YEAR,clkTmp.year);     
+	WRITE_RTCC(ADDR_MNTH,clkTmp.month);
+	WRITE_RTCC(ADDR_DATE,clkTmp.date);
+	WRITE_RTCC(ADDR_HOUR,clkTmp.hour);
+	WRITE_RTCC(ADDR_MIN,clkTmp.min) ;
+	WRITE_RTCC(ADDR_SEC,START_32KHZ);
+}
+
+void setClockUart(void){
+MCP79401 clkTmp;
+//strGet   @date 081200222017
+clkTmp.year=((strGet[16]-48)<< 4 ) | strGet[17]-48;// 1char = 49c  : '7' char = 55d
+clkTmp.month=((strGet[6]-48)<< 4 ) | strGet[7]-48;
+clkTmp.date=((strGet[8]-48)<< 4 ) | strGet[9]-48;
+clkTmp.hour=((strGet[10]-48)<< 4 ) | strGet[11]-48;
+clkTmp.min=((strGet[12]-48)<< 4 ) |strGet[13]-48;
+
+
+settingsClock(clkTmp);
 }

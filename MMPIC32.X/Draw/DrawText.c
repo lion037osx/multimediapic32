@@ -126,16 +126,7 @@ static WORD deb;
 void draw_clock(MCP79401 rtcc){
 static BYTE str[32];
 static MCP79401 ram_rtcc;
-
-#ifdef __DEBUG__
-    debug("debug year",rtcc.year);
-    debug("debug month",rtcc.month);
-    debug("debug day",rtcc.date);
-    debug("debug hour",rtcc.hour);
-    debug("debug min",rtcc.min);
-    debug("debug sec",rtcc.sec);
-#endif
-    
+  
     sprintf(str,"%d.%d%d.%d%d",ram_rtcc.year,(ram_rtcc.month>>4)&0x7,ram_rtcc.month&0xf,(ram_rtcc.date>>4)&0x7,ram_rtcc.date&0xf);
     //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
     str_draw_txt(200,96,str,COLOR_BACKGROUND);

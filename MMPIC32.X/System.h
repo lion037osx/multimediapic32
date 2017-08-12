@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-    
+
 #include "HardwareProfile.h"
 #include "ConfigHardware.h"
 #include "SystemClock.h"
@@ -22,8 +22,11 @@ extern "C" {
 #include "interrupts.h"
 #include "Draw/DrawMenuRoot.h"
 #include <stdbool.h>
+#include <GenericTypeDefs.h>
     
-//#include <stdlib.h>
+    //#include "GlobalVar.h"    
+
+    //#include <stdlib.h>
 //#include <stdio.h>
 //#include <string.h>    
   

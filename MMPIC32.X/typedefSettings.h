@@ -14,13 +14,13 @@ extern "C" {
 
 #define IN 1
 #define OUT 0    
-    
+  /*  
 enum menu_master{
     config_all,//seting time //setting temp//SCREEN=>brigth//network,=>ip=>port=>servers_time//server_tmp=>name=>
     screen_domotics,    
 };
 
-
+*/
 
 typedef struct menu_master_t{
 UINT8 config_all:8;
@@ -117,13 +117,13 @@ enum settings_wifi{
     set_wifi_gatewoy
 };
 
-typedef struct settings_wifi_t{
+typedef struct set_wifi_t{
     UINT8 wifi_user[32];
     UINT8 wifi_password[32];
     UINT8 wifi_adrress[4];
     UINT8 wifi_netmask[4];//255.255.255.0
     UINT8 wifi_gatewoy[4];
-}SETTINGS_WIFI_t;
+}SET_WIFI_t;
 
  typedef struct settings_butt_t{
     WORD color:16;

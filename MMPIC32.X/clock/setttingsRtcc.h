@@ -40,6 +40,8 @@ UINT8 compare_rtcc(void);
 MCP79401 puts_uart_time(void);
 MCP79401 get_time(void);
 BYTE* str_month(BYTE tmp);
+void settingsClock(MCP79401 settings);
+void setClockUart(void);
 
 
 #define WRITE_RTCC sram_byte_write_i2c1

@@ -16,6 +16,8 @@ extern "C" {
     
 void draw_clock(MCP79401 rtcc);
 
+void drawText(void);
+
 WORD func_draw_txt(WORD start_x , WORD start_y , BYTE ascii ,WORD color_font);
 
 WORD str_draw_txt(WORD x,WORD y,char* str,WORD color_font);
