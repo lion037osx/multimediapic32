@@ -369,3 +369,83 @@ BYTE Hex2Char(BYTE hex)
     else
         return (h + 48);
 }
+
+
+
+
+void UART1Init( void){   
+    setTrisUart1();
+    U1BRG = BAUDRATEREG1;
+    U1MODE = 0;
+    U1MODEbits.BRGH = BRGH1;
+    U1STA = 0;
+    U1MODEbits.UARTEN = 1;
+    U1STAbits.UTXEN = 1;
+   
+      IFS0bits.U1RXIF=0;
+    
+    #if defined (__PIC32MX__)
+        U1STAbits.URXEN = 1;
+    #endif
+} // initU2
+
+
+
+void UART1PutChar( char ch ){
+    U1TXREG = ch;
+    #if !defined(__PIC32MX__)
+        Nop();
+    #endif
+    while(U1STAbits.TRMT == 0);
+}
+
+void UART1Puts( char *str ){
+static unsigned char c;
+
+    while((c = *str++))UART1PutChar(c);
+}
+
+
+BYTE UART1GetChar(void){ 
+//char Temp;
+BYTE Temp;
+
+    while(IFS0bits.U1RXIF == 0);
+    Temp = U1RXREG;
+    IFS0bits.U1RXIF = 0;
+    return Temp;
+}
+
+
+
+
+
+char *getsnUART1( char *s, int len)
+{
+    char *p = s;            // copy the buffer pointer 
+    do{
+        *s = UART1GetChar();       // wait for a new character
+        UART1PutChar( *s);         // echo character
+        
+        if (( *s==BACKSPACE)&&( s>p))
+        {
+            UART1PutChar( ' ');     // overwrite the last character
+            UART1PutChar( BACKSPACE);
+            len++;
+            s--;            // back the pointer
+            continue;
+        }
+        if ( *s=='\n')      // line feed, ignore it
+            continue;
+        if ( *s=='\r')      // end of line, end loop
+            break;          
+        s++;                // increment buffer pointer
+        len--;
+    } while ( len>1 );      // until buffer full
+ 
+    *s = '\0';              // null terminate the string 
+    
+    return p;               // return buffer pointer
+} // getsn
+
+

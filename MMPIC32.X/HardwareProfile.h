@@ -20,6 +20,7 @@ extern "C" {
     #define __PIC32MX360__
     #define __SPI1__
     #define __SPI2__    
+#define __ESP8266__
 #endif
     
 #ifdef __ENABLE_INTERRUPTS__
@@ -34,7 +35,7 @@ extern "C" {
     
 //#define HEIGHT_SCREEN DISP_VER_RESOLUTION    
 //#define WIDTH_SCREEN DISP_HOR_RESOLUTION
-  #define HEIGHT_SCREEN 272    
+#define HEIGHT_SCREEN 272    
 #define WIDTH_SCREEN 480
   
     
@@ -45,6 +46,13 @@ extern "C" {
 #define INPUT 1
 #define OUTPUT 0    
     
+    
+#define __UART1__
+#define __UART2__
+    
+/*******************************************       Config Esp8266         ***********************************************/    
+    
+
 #ifdef	__cplusplus
 }
 #endif

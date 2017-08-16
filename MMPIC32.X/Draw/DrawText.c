@@ -152,17 +152,22 @@ void draw_clock(MCP79401 rtcc){
 static BYTE str[32];
 static MCP79401 ram_rtcc;
 #ifdef __DRAW_CLOCK__  
-    sprintf(str,"%d.%d%d.%d%d",ram_rtcc.year,(ram_rtcc.month>>4)&0x7,ram_rtcc.month&0xf,(ram_rtcc.date>>4)&0x7,ram_rtcc.date&0xf);
-    //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
-    str_draw_txt(200,96,str,COLOR_BACKGROUND);
-    sprintf(str,"%d%d:%d%d",(ram_rtcc.hour>>4)&0x7,ram_rtcc.hour&0xf,(ram_rtcc.min>>4)&0x7,ram_rtcc.min&0xf);    
-    str_draw_txt(200,64,str,COLOR_BACKGROUND);             
+    #ifdef __DRAW_DATE__
+        sprintf(str,"20%d%d.%d%d.%d%d",(ram_rtcc.year)>>4,ram_rtcc.year&0x7,(ram_rtcc.month>>4)&0x7,ram_rtcc.month&0xf,(ram_rtcc.date>>4)&0x7,ram_rtcc.date&0xf);
+        //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
+        str_draw_txt(200,96,str,COLOR_BACKGROUND);
 
-    sprintf(str,"%d.%d%d.%d%d",rtcc.year,(rtcc.month>>4)&0x7,rtcc.month&0xf,(rtcc.date>>4)&0x7,rtcc.date&0xf);
-    //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
-    str_draw_txt(200,96,str,COLOR_FONT_CLOCK);
+
+
+        sprintf(str,"20%d%d.%d%d.%d%d",(rtcc.year)>>4,rtcc.year&0x7,(rtcc.month>>4)&0x7,rtcc.month&0xf,(rtcc.date>>4)&0x7,rtcc.date&0xf);
+        //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
+        str_draw_txt(200,96,str,COLOR_FONT_CLOCK);
+    #endif
+    sprintf(str,"%d%d:%d%d",(ram_rtcc.hour>>4)&0x7,ram_rtcc.hour&0xf,(ram_rtcc.min>>4)&0x7,ram_rtcc.min&0xf);    
+    str_draw_txt(412,230,str,COLOR_BACKGROUND_CLOCK);     
+    
     sprintf(str,"%d%d:%d%d",(rtcc.hour>>4)&0x7,rtcc.hour&0xf,(rtcc.min>>4)&0x7,rtcc.min&0xf);    
-    str_draw_txt(200,64,str,COLOR_FONT_CLOCK); 
+    str_draw_txt(412,230,str,COLOR_FONT_CLOCK); 
     ram_rtcc=rtcc;
 #endif
 }

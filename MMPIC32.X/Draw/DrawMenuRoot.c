@@ -8,8 +8,8 @@
 #include <GenericTypeDefs.h>
 #include "../Uart.h"
 
-#include "../icons/battery32x32.h"
-#include "../icons/check32.h"
+//#include "../icons/battery32x32.h"
+//#include "../icons/check32.h"
 #include "../icons/cogs32.h"
 #include "../icons/db32.h"
 #include "../icons/globe32.h"
@@ -35,6 +35,28 @@ WORD setColorFrontIcon(){
     return (COLOR_ICON_ON);
 }
 
+void iconsInactiveMenu(void){
+        static UINT startLeft=(DISP_HOR_RESOLUTION/(STRLEN_MENU+2));
+    static int toolBarVert = DISP_VER_RESOLUTION - 48;  
+
+  //      draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorIconOff());
+
+//        draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorIconOff());
+  
+        draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorIconOff());
+   
+        draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorIconOff());
+
+        draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorIconOff());
+  
+        draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorIconOff());
+    
+        draw_icon( startLeft + (PIN_MAP*startLeft) ,toolBarVert ,(void *)&pinmap32,setColorIconOff());
+  
+        draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorIconOff());
+
+}
+
 bool menumMaster(int flag){
     
     static int menu=0;
@@ -42,19 +64,19 @@ bool menumMaster(int flag){
     static UINT startLeft=(DISP_HOR_RESOLUTION/(STRLEN_MENU+2));
     static int toolBarVert = DISP_VER_RESOLUTION - 48;  
       if(get_portb4()==0 || flag==TRUE){
-          
-          UARTPutString("menuMaster\r\n");
-          
+              
           while(get_portb4()==0);
-          LED_RA3=~LED_RA3;
-        switch (menu-1){
+          //LED_RA3=~LED_RA3;
 
+   
+        switch (menu-1){
+                            /*
             case BATTERY:
                 draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorIconOff());
                     break;
             case CHECK:   
                 draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorIconOff());
-                    break;        
+                    break;        */
             case SUN:       
                 draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorIconOff());
                     break;
@@ -62,33 +84,38 @@ bool menumMaster(int flag){
                 draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorIconOff());
                     break;
             case CONFIG: 
-                LED_RA2=~LED_RA2;
-                sprintf(str,"SET CONFIG:%d\r\n",flagSetConfig);
+                LED_RA3=~LED_RA3;
+//                sprintf(str,"SET CONFIG:%d\r\n",flagSetConfig);
 
-                if(flagSetConfig>=1){UARTPutString(str);flagSetConfig=0;menu--;configAll();}
+                if(flagSetConfig>=1){
+                    UARTPutString(str);
+                    flagSetConfig=0;
+                    menu--;
+                    configAll();
+                }
                 draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorIconOff());
                     break;
             case DATABASE:       
                 draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorIconOff());
                     break;
-            case TOOLS:       
-                draw_icon( startLeft + (TOOLS*startLeft) ,toolBarVert ,(void *)&wrench32,setColorIconOff());
+            case PIN_MAP:       
+                draw_icon( startLeft + (PIN_MAP*startLeft) ,toolBarVert ,(void *)&pinmap32,setColorIconOff());
                     break;
             case USERS:       
                 draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorIconOff());
                     break;
             default:
                     break;
-        }               
+        }   
        
         switch (menu){
-
+                /*
             case BATTERY:
                 draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorFrontIcon());
                     break;
             case CHECK:   
                 draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorFrontIcon());
-                    break;        
+                    break;    */    
             case SUN:       
                 draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorFrontIcon());
                     break;
@@ -101,8 +128,8 @@ bool menumMaster(int flag){
             case DATABASE:       
                 draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorFrontIcon());
                     break;
-            case TOOLS:       
-                draw_icon( startLeft + (TOOLS*startLeft) ,toolBarVert ,(void *)&wrench32,setColorFrontIcon());
+            case PIN_MAP:       
+                draw_icon( startLeft + (PIN_MAP*startLeft) ,toolBarVert ,(void *)&pinmap32,setColorFrontIcon());
                     break;
             case USERS:       
                 draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorFrontIcon());
@@ -112,7 +139,7 @@ bool menumMaster(int flag){
         }   
         //flagSetConfig=0;
          menu++;
-        if(menu>8){menu=0;}
+        if(menu>6){menu=0;}
          flag=FALSE;
         return (TRUE);
     }
@@ -124,22 +151,16 @@ bool menumMaster(int flag){
 
 
 void drawInitMenu(void){
-    static int rigth;
-    rigth=9;
-    while( rigth-- )menumMaster(TRUE);
+iconsInactiveMenu();
 }
 
 void configTime(void){
 static UINT8 select=0;
 static MCP79401 clock;
-
-
 //clock=get_time();
 
 clock.hour=0x00;
 clock.min=0x00;
-
-
 clock.year=0x00;
 clock.month=0x01;
 clock.date=0x01;
@@ -172,7 +193,8 @@ clock.date=0x01;
         default:
             break;
     }          
-    settingsClock(clock);
+    //settingsClock(clock);
+    
     select++;
     if(select>=CFG_TIME_N_MAX){
         select=0;

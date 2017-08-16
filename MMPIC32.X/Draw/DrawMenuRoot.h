@@ -16,14 +16,14 @@ extern "C" {
 #include <GenericTypeDefs.h>
     
 typedef enum menu_enum{
-BATTERY,
-CHECK,        
-SUN,
-HOUSE,
-CONFIG,
-DATABASE,
-TOOLS,
+//BATTERY,
+//CHECK,        
+PIN_MAP,    
 USERS,
+DATABASE,
+HOUSE,
+SUN,
+CONFIG,
 STRLEN_MENU        
 }MenuOrigin_t;
 
@@ -69,6 +69,7 @@ void configTime(void);
 void configWifi(void);
 void configAll(void);
 void draw_tool_bar(void);
+void iconsInactiveMenu(void);
 
 #ifdef	__cplusplus
 }

@@ -12,4 +12,6 @@ Graphics/Tft.h  \
 Graphics/../ConfigHardware.h  \
  Graphics/Colors.h  \
 Graphics/Colors.h  \
-interrupts.h 
+interrupts.h  \
+HardwareProfile.h  \
+ Draw/DrawLogo.h 

@@ -166,7 +166,7 @@ if(stat)UARTPutString("OSC success!\r\n");
 }
 
 UINT8 func_clock(void){
-static UINT8 time,tmp;
+static UINT8 time,tmp=0x00;
 static MCP79401 rtccTmp;
 static MCP79401 rtcc;
 
@@ -175,8 +175,12 @@ time=rtcc.sec;
 //time=read_buff_rtcc(ADDR_SEC);
     if(time!=tmp)
     {
-        rtcc=puts_uart_time();
-        if((rtcc.min)!=(rtccTmp.min))
+        rtcc=get_time();
+#ifdef __DEBUG_CLOCK__
+                puts_uart_time();
+#endif
+
+if((rtcc.min)!=(rtccTmp.min) || (rtcc.hour)!=(rtccTmp.hour) || (rtcc.date)!=(rtccTmp.date))
         {
             draw_clock(rtcc);
             rtccTmp=rtcc;
@@ -224,7 +228,7 @@ rtcc_read=get_time();
         sprintf(str,"min:0x%X\r\n",rtcc_read.min);
         UARTPutString(str);
     #endif
-        set_time();
+//        set_time();
     }
 puts_uart_time();
 
@@ -303,7 +307,6 @@ clkTmp.date=((strGet[8]-48)<< 4 ) | strGet[9]-48;
 clkTmp.hour=((strGet[10]-48)<< 4 ) | strGet[11]-48;
 clkTmp.min=((strGet[12]-48)<< 4 ) |strGet[13]-48;
 clkTmp.sec=((strGet[18]-48)<< 4 ) |strGet[19]-48;
-
 
 settingsClock(clkTmp);
 }

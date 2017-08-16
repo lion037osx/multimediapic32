@@ -15,10 +15,12 @@
         <itemPath>Draw/DrawIcons.h</itemPath>
         <itemPath>Draw/DrawText.h</itemPath>
         <itemPath>Draw/DrawMenuRoot.h</itemPath>
+        <itemPath>Draw/DrawLogo.h</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.h</itemPath>
         <itemPath>drivers/spiTsc2046.h</itemPath>
+        <itemPath>drivers/esp8266.h</itemPath>
       </logicalFolder>
       <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
         <itemPath>fonts/GOLFont.h</itemPath>
@@ -40,6 +42,7 @@
         <itemPath>icons/sun32.h</itemPath>
         <itemPath>icons/users32.h</itemPath>
         <itemPath>icons/wrench32.h</itemPath>
+        <itemPath>icons/logo.h</itemPath>
       </logicalFolder>
       <itemPath>HardwareProfile.h</itemPath>
       <itemPath>System.h</itemPath>
@@ -72,10 +75,12 @@
         <itemPath>Draw/DrawText.c</itemPath>
         <itemPath>Draw/DrawMenuRoot.c</itemPath>
         <itemPath>Draw/DrawIcon.c</itemPath>
+        <itemPath>Draw/DrawLogo.c</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.c</itemPath>
         <itemPath>drivers/spiTsc2046.c</itemPath>
+        <itemPath>drivers/esp8266.c</itemPath>
       </logicalFolder>
       <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
         <itemPath>fonts/century_size12.c</itemPath>

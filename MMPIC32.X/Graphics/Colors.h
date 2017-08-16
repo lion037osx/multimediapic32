@@ -46,16 +46,26 @@ extern "C" {
 #define GRAY5               RGB565CONVERT(64,   64,     64)
 #define GRAY6	            RGB565CONVERT(32,   32,     32)
 
-
+#define BLUE_BG    0x2167//RGB565CONVERT(0x6721);
+    
+    
 //#define COLOR_BACKGROUND RGB565CONVERT(254,254,254)
-    #define COLOR_BACKGROUND WHITE
-#define COLOR_FONT_CLOCK GRAY4    
+  #define COLOR_BACKGROUND   BLUE_BG
+//#define COLOR_BACKGROUND WHITE
+    
 #define COLOR_FRONT_ICON GRAY2  
 #define COLOR_BACKGROUND_ICON COLOR_BACKGROUND
-#define COLOR_ICON_OFF GRAY3
-#define COLOR_ICON_ON GREEN
+    
+/********************   Set colors Icons    *************************/
+#define COLOR_ICON_OFF      GRAY5// 0x32AE//color SpaceBackGround  0x32AE
+#define COLOR_ICON_ON BRIGHTGREEN
+    
 #define COLOR_FRONT_TEXT GRAY1
+    
 #define COLOR_TOOL_BAR GRAY5
+
+#define COLOR_FONT_CLOCK GRAY1
+#define COLOR_BACKGROUND_CLOCK  0x32AE//color SpaceBackGround  0x32AE//COLOR_TOOL_BAR
     
 #define COLOR_FRONT_BUTTON  WHITE  
 #define COLOR_BACK_BUTTON WHITE  
