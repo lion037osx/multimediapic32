@@ -9,8 +9,8 @@
 
 #include "System.h"
 
- extern UINT16 flagSetConfig;
- extern BYTE strGet[32];
+extern UINT16 flagSetConfig;
+extern BYTE strGet[32];
 
 int main(void){
     inits();     

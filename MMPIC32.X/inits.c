@@ -10,12 +10,11 @@
 
 
 void configInterruptUart(void){
-
- //UARTConfigure(UART2, UART_ENABLE_PINS_TX_RX_ONLY);
-  //UARTSetFifoMode(UART2, UART_INTERRUPT_ON_TX_NOT_FULL | UART_INTERRUPT_ON_RX_NOT_EMPTY);
-  //UARTSetLineControl(UART2, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
-  //UARTSetDataRate(UART2, GetPeripheralClock(), DESIRED_BAUDRATE);
-  //UARTEnable(UART2, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
+//UARTConfigure(UART2, UART_ENABLE_PINS_TX_RX_ONLY);
+//UARTSetFifoMode(UART2, UART_INTERRUPT_ON_TX_NOT_FULL | UART_INTERRUPT_ON_RX_NOT_EMPTY);
+//UARTSetLineControl(UART2, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
+//UARTSetDataRate(UART2, GetPeripheralClock(), DESIRED_BAUDRATE);
+//UARTEnable(UART2, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
 #ifdef __UART1__    
     INTEnable(INT_SOURCE_UART_RX(UART1), INT_ENABLED);
     INTSetVectorPriority(INT_VECTOR_UART(UART1), INT_PRIORITY_LEVEL_1);
@@ -32,7 +31,6 @@ void configInterruptUart(void){
 
 
 void configUart(void){
-
 #ifdef __UART1__
     UART1Init();
 #endif
@@ -64,7 +62,7 @@ void inits(void){
     showLogo();
     
     BACKLIGTH=1;
-    DelayMs(4000);  
+    DelayMs(2000);  
   
     initESP8266();
     ConfigButtonRB4();      

@@ -84,7 +84,7 @@ bool menumMaster(int flag){
                 draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorIconOff());
                     break;
             case CONFIG: 
-                LED_RA3=~LED_RA3;
+                //LED_RA3=~LED_RA3;
 //                sprintf(str,"SET CONFIG:%d\r\n",flagSetConfig);
 
                 if(flagSetConfig>=1){

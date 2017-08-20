@@ -1,4 +1,4 @@
-#https://github.com/lion037osx/multimediapic32
+#https://github.com/lion037osx/xc32multimedia
 
 
 all:
@@ -9,11 +9,11 @@ help:
 	@+echo "*********************************Help GIT******************************************"
 	@+echo ""
 	@+echo "make clone"
-	@+echo "		git clone https://github.com/lion037osx/multimediapic32.git"
+	@+echo "		git clone https://github.com/lion037osx/xc32multimedia.git"
 	@+echo "make push"
-	@+echo "		git push https://github.com/lion037osx/multimediapic32.git"
+	@+echo "		git push https://github.com/lion037osx/xc32multimedia.git"
 	@+echo "make pull"
-	@+echo "		git pull https://github.com/lion037osx/multimediapic32.git"
+	@+echo "		git pull https://github.com/lion037osx/xc32multimedia.git"
 	@+echo "make commit"
 	@+echo "		git commit -m \"update\""
 	@+echo "make add"
@@ -28,19 +28,19 @@ help:
 
 clone:
 
-	git clone https://github.com/lion037osx/multimediapic32.git
+	git clone https://github.com/lion037osx/xc32multimedia.git
 
 push:
 	git add.
 	git commit -m "update"
 #	git push origin master 
-	git push https://github.com/lion037osx/multimediapic32.git
+	git push https://github.com/lion037osx/xc32multimedia.git
 
 pull:
 	git add .
 	git commit -m "upgrade"
 #	git pull origin master
-	git pull git push https://github.com/lion037osx/multimediapic32.git
+	git pull git push https://github.com/lion037osx/xc32multimedia.git
 
 commit:
 
@@ -61,8 +61,8 @@ merge:
 	#git remote -v
 
 
-update:
+upgrade:
 	git add .
-	git commit -m "update"
+	git commit -m "upgrade"
 	git push origin master
 
