@@ -21,7 +21,7 @@ extern "C" {
 
 #define HardwareConfigButtonInit()      {TRISBbits.TRISB4=1;\
                                         TRISAbits.TRISA7=1;\
-                                        TRISDbits.TRISD6=1;\
+                                        TRISBbits.TRISB4=1;\
                                         TRISDbits.TRISD7=1;\
                                         TRISDbits.TRISD13=1;\
                                         }
@@ -34,7 +34,7 @@ extern "C" {
 
 #define GetHWButtonProgram4()   PORTDbits.RD13
 
-#define GetHWButtonProgram5()   PORTB4bits.RB4
+#define GetHWButtonProgram5()   PORTBbits.RB4
 
 //#define HardwareOuputsAllTrisA() {TRISAbits.TRISA0=0;\
 //TRISAbits.TRISA1=0;TRISAbits.TRISA2=0;TRISAbits.TRISA3=0;\

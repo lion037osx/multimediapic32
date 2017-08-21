@@ -3,16 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/main.c</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/Graphics/Colors.h</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/run.c</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/Draw/DrawGraphics.c</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/inits.c</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/clock/setttingsRtcc.c</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/Draw/DrawMenuRoot.c</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/icons/logo.h</file>
-            <file>file:/home/optimus/Documentos/source_code/microchip/mmpic32/multimediapic32/MMPIC32.X/Uart.c</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
