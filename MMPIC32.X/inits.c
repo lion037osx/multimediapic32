@@ -47,7 +47,7 @@ void inits(void){
     SYSTEMConfigPerformance(GetSystemClock());
     Back_ligth_off();
     ConfigInterrupts();
-    
+    SST25Init();    
     configUart();
     INTEnableInterrupts();
     ConfigBackligth();
