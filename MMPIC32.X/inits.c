@@ -7,7 +7,7 @@
 #include <plib.h>
 #include "HardwareProfile.h"
 #include "Draw/DrawLogo.h"
-
+#include "drivers/SST25VF016.h"
 
 void configInterruptUart(void){
 //UARTConfigure(UART2, UART_ENABLE_PINS_TX_RX_ONLY);

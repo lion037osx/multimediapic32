@@ -10,6 +10,9 @@
         <itemPath>clock/ds1307rtcc.h</itemPath>
         <itemPath>clock/drvI2C.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <itemPath>config/compiler.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="Draw" displayName="Draw" projectFiles="true">
         <itemPath>Draw/DrawGraphics.h</itemPath>
         <itemPath>Draw/DrawIcons.h</itemPath>
@@ -21,6 +24,7 @@
         <itemPath>drivers/tsc2046.h</itemPath>
         <itemPath>drivers/spiTsc2046.h</itemPath>
         <itemPath>drivers/esp8266.h</itemPath>
+        <itemPath>drivers/SST25VF016.h</itemPath>
       </logicalFolder>
       <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
         <itemPath>fonts/GOLFont.h</itemPath>
@@ -81,6 +85,7 @@
         <itemPath>drivers/tsc2046.c</itemPath>
         <itemPath>drivers/spiTsc2046.c</itemPath>
         <itemPath>drivers/esp8266.c</itemPath>
+        <itemPath>drivers/SST25VF016.c</itemPath>
       </logicalFolder>
       <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
         <itemPath>fonts/century_size12.c</itemPath>

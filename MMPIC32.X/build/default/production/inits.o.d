@@ -14,4 +14,5 @@ Graphics/../ConfigHardware.h  \
 Graphics/Colors.h  \
 interrupts.h  \
 HardwareProfile.h  \
- Draw/DrawLogo.h 
+ Draw/DrawLogo.h  \
+drivers/SST25VF016.h 
