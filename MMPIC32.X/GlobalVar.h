@@ -15,7 +15,7 @@ extern "C" {
 //#include <stdbool.h>
     
 //static int flagSetConfig=0;
-
+//extern WORD _colorBackGround;
 
 #ifdef	__cplusplus
 }

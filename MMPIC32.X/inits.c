@@ -9,6 +9,8 @@
 #include "Draw/DrawLogo.h"
 #include "drivers/SST25VF016.h"
 
+extern WORD _colorBackGround;
+
 void configInterruptUart(void){
 //UARTConfigure(UART2, UART_ENABLE_PINS_TX_RX_ONLY);
 //UARTSetFifoMode(UART2, UART_INTERRUPT_ON_TX_NOT_FULL | UART_INTERRUPT_ON_RX_NOT_EMPTY);
@@ -53,6 +55,7 @@ void inits(void){
     ConfigBackligth();
     ConfigHardwareLeds();
     ConfigClearAllLeds();
+    _colorBackGround=RED;
 
     ResetDevice();//graphics function
     

@@ -60,7 +60,13 @@ extern "C" {
     
     
     
-    
+//#define __MEMORY_FLASH__
+
+#ifdef __MEMORY_FLASH__
+  //#define  
+#else 
+    #define __MEMORY_RAM__
+#endif    
     
     
     

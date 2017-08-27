@@ -1,83 +1,83 @@
-
+/***********************************************************************
+ *code:  Draw logo 
+ *update : 26 08 2017
+ * 
+ * 
+ ************************************************************************/
 #include "../Graphics/Ssd1963.h"
+#include "../HardwareProfile.h"
 
-#ifdef __LOGO__
+#ifdef __MEMORY_FLASH__
+#include "../drivers/SST25VF016.h"
+#else //__MEMORY_RAM__
     #include "../icons/logo.h"
-#else
-    #include "../drivers/SST25VF016.h"
+extern WORD _colorBackGround;
 #endif
-/*
+
+#ifdef __MEMORY_FLASH__
+//NEW VERSION
 void showLogo(void){      
-static int x,y;
+static SHORT x,y;
 DWORD address=0x0000;
 
 #ifdef __LOGO__
     BYTE *bmp ;
-    bmp=(void *)&new_bmp;
+    bmp=(void *)&logo;
 #endif
     
-address=18;
+address=0x6;
 
-y=0;
 while(y<272)
-   // for(y=0;y<272;y++)
     {
-    x=0;
-    while(x<(480))
-        //for(x=0;x<480;x++)
+    x=0x0000;
+    while(x<480)
         {
-        #ifdef __LOGO__
-            _color= ((bmp[address+1]<<8)&0xFF00|(bmp[address]&0xFF));
-        #else
 
-       _color= ((SST25ReadByte(address+1)<<8)|(SST25ReadByte(address)));
-       
-     // _color = (WORD *)((SST25ReadByte(address)<<8)&0xFF00 | (SST25ReadByte(address+1))&0xFF);
-       
-    //     _color= (WORD )((SST25ReadWord(address))&0xFFFF);
+        #ifdef __MEMORY_FLASH__
+
+       //_color= ((SST25ReadByte(address+1)<<8)|(SST25ReadByte(address)));
+         
+      _color= SST25ReadWord(address);
         #endif
             PutPixel(x,y);
-
-            address=address+2;
+            address=address+0x2;
            // address++;
            x++;
         }   
     y++;
     }
+_colorBackGround=_color;//(WORD)((bmp[address-2]<<8)&0xFF00 | (bmp[address-1]&0xFF));
 }
-*/
+#endif
 
-
-
-
+#ifdef __MEMORY_RAM__ 
 
 void showLogo(void){      
-static WORD x,y;
-static DWORD address;
+static SHORT x,y;
+DWORD address=0x0000;
 
-#ifdef __LOGO__
-    BYTE *bmp ;
-    bmp=(void *)&new_bmp;
-#endif
-    
-address=18;
+static BYTE *bmp ;
+bmp=(void *)&logo;
+
+address=0x6;
+
 y=272;
 while(y--)
-//    for(y=0;y<272;y++)
     {
-    x=0;
+    x=0x0000;
     while(x<480)
-  //      for(x=0;x<480;x++)
         {
-        #ifdef __LOGO__
-            _color= ((bmp[address+1]<<8)&0xFF00|(bmp[address]&0xFF));
-        #else
-        _color= ((SST25ReadByte(address+1)<<8)|(SST25ReadByte(address)));
-        //_color= (WORD )((SST25ReadWord(address))&0xFFFF);
+        #ifdef __MEMORY_RAM__
+            _color= (WORD)((bmp[address+1]<<8)&0xFF00 | (bmp[address]&0xFF));
         #endif
             PutPixel(x,y);
-           address=address+2;
-          x++;
-        }         
+            address=address+0x2;
+           x++;
+        }   
     }
+
+//_colorBackGround=(WORD)((bmp[address-2]<<8)&0xFF00 | (bmp[address-1]&0xFF));
+_colorBackGround=_color;
 }
+#endif
+

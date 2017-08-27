@@ -46,7 +46,6 @@
         <itemPath>icons/sun32.h</itemPath>
         <itemPath>icons/users32.h</itemPath>
         <itemPath>icons/wrench32.h</itemPath>
-        <itemPath>icons/logo.h</itemPath>
       </logicalFolder>
       <itemPath>HardwareProfile.h</itemPath>
       <itemPath>System.h</itemPath>
