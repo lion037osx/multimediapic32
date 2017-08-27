@@ -1,17 +1,16 @@
-
+#include <GenericTypeDefs.h>
 //#include "../fonts/GOLFont.h"
+//#include "../fonts/arial_size8_c32.h"
 #include "../Primitive.h"
 //#include "debug.h"
 #include "../clock/setttingsRtcc.h"
 #include "DrawGraphics.h"
 #include "DrawText.h"
 #include "../Graphics/Ssd1963.h"
-//#include <stdlib.h>
-//#include <stdio.h>
-//#include <string.h>
+#include "DrawClock.h"
 #include <p32xxxx.h>
 //#include <plib.h>
-//#include "../fonts/arial_size8_c32.h"
+
 
 
 
@@ -164,7 +163,7 @@ static MCP79401 ram_rtcc;
         str_draw_txt(200,96,str,COLOR_FONT_CLOCK);
     #endif
     sprintf(str,"%d%d:%d%d",(ram_rtcc.hour>>4)&0x7,ram_rtcc.hour&0xf,(ram_rtcc.min>>4)&0x7,ram_rtcc.min&0xf);    
-    str_draw_txt(412,230,str,COLOR_BACKGROUND_CLOCK);     
+    str_draw_txt(412,230,str,setClearClockColor());     
     
     sprintf(str,"%d%d:%d%d",(rtcc.hour>>4)&0x7,rtcc.hour&0xf,(rtcc.min>>4)&0x7,rtcc.min&0xf);    
     str_draw_txt(412,230,str,COLOR_FONT_CLOCK); 

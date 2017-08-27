@@ -12,7 +12,7 @@
 extern "C" {
 #endif
     
-#include <GenericTypeDefs.h>
+
     
 void draw_clock(MCP79401 rtcc);
 

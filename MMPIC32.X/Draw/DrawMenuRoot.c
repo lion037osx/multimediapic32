@@ -20,27 +20,22 @@
 
 #include "../clock/setttingsRtcc.h"
 #ifdef __MEMORY_RAM__ 
-extern WORD _colorBackGround;
+extern WORD _palletBackGroundColor;
 #endif
 
 #ifdef __MEMORY_FLASH__
-extern WORD _colorBackGround;
+extern WORD _palletBackGroundColor;
 #endif
 extern UINT16 flagSetConfig;
 
 WORD setColorClearIcon(){
-
-    //return (COLOR_BACK_ICON);
     #ifdef __MEMORY_RAM__ 
-    //static BYTE *bmp ;
-    //bmp=(void *)&logo;
     //return (COLOR_BACKGROUND_ICON);
-    return (_colorBackGround);
-    //return ((bmp[((HEIGHT_SCREEN*WIDTH_SCREEN*2)-2)]<<8)&0xFF00|(bmp[((HEIGHT_SCREEN*WIDTH_SCREEN*2)-1)]<<8)&0xFF);
-    #endif
+    return (_palletBackGroundColor);
+   #endif
 #ifdef __MEMORY_FLASH__ 
-    //return (SST25ReadWord((HEIGHT_SCREEN*WIDTH_SCREEN*2)-2));
-    return(white);
+    return (_palletBackGroundColor);
+//    return (COLOR_BACK_ICON);
 #endif
 }
 

@@ -9,9 +9,10 @@
 
 #ifdef __MEMORY_FLASH__
 #include "../drivers/SST25VF016.h"
+extern WORD _palletBackGroundColor;
 #else //__MEMORY_RAM__
     #include "../icons/logo.h"
-extern WORD _colorBackGround;
+extern WORD _palletBackGroundColor;
 #endif
 
 #ifdef __MEMORY_FLASH__
@@ -46,7 +47,7 @@ while(y<272)
         }   
     y++;
     }
-_colorBackGround=_color;//(WORD)((bmp[address-2]<<8)&0xFF00 | (bmp[address-1]&0xFF));
+_palletBackGroundColor=_color;//(WORD)((bmp[address-2]<<8)&0xFF00 | (bmp[address-1]&0xFF));
 }
 #endif
 
@@ -77,7 +78,7 @@ while(y--)
     }
 
 //_colorBackGround=(WORD)((bmp[address-2]<<8)&0xFF00 | (bmp[address-1]&0xFF));
-_colorBackGround=_color;
+_palletBackGroundColor=_color;
 }
 #endif
 

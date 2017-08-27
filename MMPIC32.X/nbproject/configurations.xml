@@ -19,6 +19,7 @@
         <itemPath>Draw/DrawText.h</itemPath>
         <itemPath>Draw/DrawMenuRoot.h</itemPath>
         <itemPath>Draw/DrawLogo.h</itemPath>
+        <itemPath>Draw/DrawClock.h</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.h</itemPath>
@@ -79,6 +80,7 @@
         <itemPath>Draw/DrawMenuRoot.c</itemPath>
         <itemPath>Draw/DrawIcon.c</itemPath>
         <itemPath>Draw/DrawLogo.c</itemPath>
+        <itemPath>Draw/DrawClock.c</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.c</itemPath>

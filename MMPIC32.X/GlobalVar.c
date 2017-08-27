@@ -5,5 +5,5 @@
 
 UINT16 flagSetConfig=0;
 BYTE strGet[32];
-WORD _colorBackGround;
+WORD _palletBackGroundColor;
 
