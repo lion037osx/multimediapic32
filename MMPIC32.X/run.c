@@ -3,7 +3,8 @@
 #include <plib.h>
 #include "Draw/DrawGraphics.h"
 #include "clock/setttingsRtcc.h"
-#include "ConfigHardware.h"
+//#include "ConfigHardware.h"
+#include "config/ConfigHardware.h"
 #include "run.h"
 #include "Draw/DrawMenuRoot.h"
 

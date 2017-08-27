@@ -1,6 +1,7 @@
 #include "SystemClock.h"
 #include "Uart.h"
-#include "ConfigHardware.h"
+//#include "ConfigHardware.h"
+#include "config/ConfigHardware.h"
 #include "Graphics/Ssd1963.h"
 #include "Graphics/Colors.h"
 #include "interrupts.h"

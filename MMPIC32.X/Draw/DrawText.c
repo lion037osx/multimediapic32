@@ -9,8 +9,9 @@
 #include "../Graphics/Ssd1963.h"
 #include "DrawClock.h"
 #include <p32xxxx.h>
+#include "../HardwareProfile.h"
 //#include <plib.h>
-
+extern WORD	_color;
 
 
 

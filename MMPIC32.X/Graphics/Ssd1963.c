@@ -5,9 +5,17 @@
 * Update on 2 de agosto de 2017, 12:11
 ******************************************************************************/
 
+#include "Ssd963Cmd.h"		//include the command table for SSD1963
+#include "../TimeDelay.h"			//required for DelayMs(xx) software delay
+#include "Tft.h"				//configuration for individual TFT panels
+
+#include "../HardwareProfile.h"
+#include "../config/ConfigHardware.h"
+
 #include "Ssd1963.h"
 #include <plib.h>
 #include <p32xxxx.h>
+
 
 WORD  _color;
 

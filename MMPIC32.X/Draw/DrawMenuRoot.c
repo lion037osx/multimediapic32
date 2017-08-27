@@ -1,8 +1,12 @@
 #include "DrawMenuRoot.h"
 #include "DrawIcons.h"
-#include "../ConfigHardware.h"
+#include "../HardwareProfile.h"
+#include "../config/ConfigHardware.h"
 #include "../Graphics/Colors.h"
 #include "../Graphics/Ssd1963.h"
+
+#include "../Graphics/Tft.h"
+
 #include <stdint.h>
 #include <plib.h>
 #include <GenericTypeDefs.h>
@@ -25,6 +29,7 @@ extern WORD _palletBackGroundColor;
 
 #ifdef __MEMORY_FLASH__
 extern WORD _palletBackGroundColor;
+extern WORD	_color;
 #endif
 extern UINT16 flagSetConfig;
 

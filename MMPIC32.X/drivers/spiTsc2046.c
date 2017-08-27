@@ -1,6 +1,7 @@
 #include "spiTsc2046.h"
 #include <GenericTypeDefs.h>
-#include "../ConfigHardware.h"
+//#include "../ConfigHardware.h"
+#include "../config/ConfigHardware.h"
 #include <plib.h>
 #include "../HardwareProfile.h"
 

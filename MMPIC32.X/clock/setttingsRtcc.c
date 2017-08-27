@@ -3,7 +3,8 @@
 #include "ds1307rtcc.h"
 #include <plib.h>
 //#include "../Uart.h"
-#include "../ConfigHardware.h"
+//#include "../ConfigHardware.h"
+#include "../config/ConfigHardware.h"
 #include "../typedefSettings.h"
 //#include "../DrawText.h"
 #include "../SystemClock.h"

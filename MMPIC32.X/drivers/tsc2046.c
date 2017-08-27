@@ -3,7 +3,8 @@
 #include "spiTsc2046.h"
 //#include <stdbool.h>
 #include <plib.h>
-#include "../ConfigHardware.h"
+//#include "../ConfigHardware.h"
+#include "../config/ConfigHardware.h"
 #include "../TimeDelay.h"
 
 UINT16 getCmdTsc2046(UINT8 cmd)

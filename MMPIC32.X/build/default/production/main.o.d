@@ -2,7 +2,7 @@ build/default/production/main.o:  \
 main.c  \
 System.h  \
 HardwareProfile.h  \
- ConfigHardware.h  \
+ config/ConfigHardware.h  \
 SystemClock.h  \
 inits.h  \
 Uart.h  \

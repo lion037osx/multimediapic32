@@ -3,9 +3,12 @@
 
 //#include <GenericTypeDefs.h>
 //#include "Colors.h"
-#include "../ConfigHardware.h"
+
+#include "../config/ConfigHardware.h"
+
 #include "../Graphics/Ssd1963.h"
 #include "../Graphics/Tft.h"
+#include "../HardwareProfile.h"
 
 
 void buttonSelect(UINT8 select){

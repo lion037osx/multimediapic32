@@ -1,4 +1,5 @@
-#include "../ConfigHardware.h"
+//#include "../ConfigHardware.h"
+#include "../config/ConfigHardware.h"
 #include "ds1307.h"
 #include <plib.h>
 #include <stdbool.h>

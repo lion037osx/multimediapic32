@@ -3,7 +3,8 @@
 #define DRVI2C_H
 
 // HardwareProfile includes the register definitions via <p24fxxxx.h> for PIC24..
-#include "../ConfigHardware.h"
+//#include "../ConfigHardware.h"
+#include "../config/ConfigHardware.h"
 
 // Change below defines to I2C2xxx if using I2C2
 #define I2CCON        I2C1CON

@@ -14,7 +14,8 @@ extern "C" {
 
 
 #include "HardwareProfile.h"
-#include "ConfigHardware.h"
+//#include "ConfigHardware.h"
+#include "config/ConfigHardware.h"
 #include "SystemClock.h"
 #include "inits.h"
 #include "Uart.h"

@@ -9,15 +9,10 @@
 #define _SSD1963_H
 
 //#include "System.h"				//Define the hardware platform, system clock speed etc.
-#include "Ssd963Cmd.h"		//include the command table for SSD1963
-#include "../TimeDelay.h"			//required for DelayMs(xx) software delay
-#include "Tft.h"				//configuration for individual TFT panels
 
-#include "../HardwareProfile.h"
-#include "../ConfigHardware.h"
 //#include <p32xxxx.h>
 
-//#include <GenericTypeDefs.h>
+#include <GenericTypeDefs.h>
 
 
 

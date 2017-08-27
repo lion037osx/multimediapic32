@@ -12,6 +12,7 @@
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <itemPath>config/compiler.h</itemPath>
+        <itemPath>config/ConfigHardware.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Draw" displayName="Draw" projectFiles="true">
         <itemPath>Draw/DrawGraphics.h</itemPath>
@@ -50,7 +51,6 @@
       </logicalFolder>
       <itemPath>HardwareProfile.h</itemPath>
       <itemPath>System.h</itemPath>
-      <itemPath>ConfigHardware.h</itemPath>
       <itemPath>SystemClock.h</itemPath>
       <itemPath>Uart.h</itemPath>
       <itemPath>inits.h</itemPath>

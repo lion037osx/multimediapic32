@@ -1,5 +1,5 @@
 build/default/production/Uart.o:  \
 Uart.c  \
 Uart.h  \
-ConfigHardware.h  \
+config/ConfigHardware.h  \
  SystemClock.h 
