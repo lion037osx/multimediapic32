@@ -33,22 +33,32 @@ extern "C" {
     //#define __TIMER2__    
 #endif 
        
-#define USE_SST25_SPI2       
-#define SPI_CHANNEL_2_ENABLE         
-#define USE_SST25VF016
-#define SST25_CS_TRIS TRISDbits.TRISD1  
-//#define GFX_EXPLORER16
-#define MULTI_MEDIA_BOARD_DM00123
-//#define __PIC32MX
-#define SST25_SPI_CHANNEL 2    
-#define SST25_CS_LAT    LATDbits.LATD1
+       
+#define USE_SST25VF016 //USE FLASH MEMORY
+    
+#if defined (USE_SST25VF016)
+    #define USE_SST25_SPI2       
+    #define SPI_CHANNEL_2_ENABLE  
+    #define SST25_CS_TRIS TRISDbits.TRISD1  
+    //#define GFX_EXPLORER16
+    #define XC32MMBOARD
+    //#define __PIC32MX
+    #define SST25_SPI_CHANNEL 2    
+    #define SST25_CS_LAT    LATDbits.LATD1
+#endif
     
 #if defined (USE_SST25VF016)
     #define FLASHInit(initData)             SST25Init(initData);
 	#define ChipErase()                     SST25ChipErase();
 	#define WriteArray(address, pdata, len) SST25WriteArray(address, pdata, len)
     #define ReadArray(address, pdata, len)  SST25ReadArray(address, pdata, len)
+        
+//CONFIG MEMORY     
+    #define __MEMORY_FLASH__
+#else
+    #define __MEMORY_RAM__
 #endif	    
+
     
 #define INPUT 1
 #define OUTPUT 0    
@@ -56,19 +66,7 @@ extern "C" {
 #define BUTTON_TRIS TRISBbits.TRISB4
 #define BUTTON_STAT PORTBbits.RB4   
     
-    
-    
-    
-    
-//#define __MEMORY_FLASH__
-
-#ifdef __MEMORY_FLASH__
-  //#define  
-#else 
-    #define __MEMORY_RAM__
-#endif    
-    
-    
+  
     
 ///*****************************    ENABLE DRAWS    ***************************///
  #define __DRAW_CLOCK__

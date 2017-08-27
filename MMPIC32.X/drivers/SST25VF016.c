@@ -52,7 +52,7 @@
 #include "SST25VF016.h"
 
 
-#if defined (GFX_EXPLORER16) || defined (PIC24FJ256DA210_DEV_BOARD) || defined (MULTI_MEDIA_BOARD_DM00123)
+#if defined (GFX_EXPLORER16) || defined (PIC24FJ256DA210_DEV_BOARD) || defined (XC32MMBOARD)
 
 /************************************************************************
 * Function: SST25Init                                                  
@@ -128,7 +128,7 @@ void SST25Init(void)
         #endif
 	#endif
     // Set IOs directions for SST25 SPI
-    #if defined (GFX_EXPLORER16) || defined (MULTI_MEDIA_BOARD_DM00123)
+    #if defined (GFX_EXPLORER16) || defined (XC32MMBOARD)
     
     SST25_CS_LAT = 1;
     SST25_CS_TRIS = 0;
