@@ -7,4 +7,5 @@ Graphics/Tft.h  \
  Graphics/../HardwareProfile.h  \
 Graphics/../config/ConfigHardware.h  \
  Graphics/Ssd1963.h  \
-Graphics/Colors.h 
+Graphics/Colors.h  \
+Graphics/../drivers/SST25VF016.h 

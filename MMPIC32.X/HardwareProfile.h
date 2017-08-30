@@ -71,13 +71,17 @@ extern "C" {
 ///*****************************    ENABLE DRAWS    ***************************///
  #define __DRAW_CLOCK__
 //#define __DEBUG__    
-    
+
+
+/*************************************      CONFIG GRAPHICS                ****************************************/    
 //#define HEIGHT_SCREEN DISP_VER_RESOLUTION    
 //#define WIDTH_SCREEN DISP_HOR_RESOLUTION
 #define HEIGHT_SCREEN 272    
 #define WIDTH_SCREEN 480
+#define USE_TE_PIN    
   
     
+
 /*******************************        Config Debug        ************************************/    
 #define __DEBUG_CLOCK__    
 #define  DEBUG  UARTPutString

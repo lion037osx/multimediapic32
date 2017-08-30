@@ -1,5 +1,5 @@
-#include "DrawMenuRoot.h"
-#include "DrawIcons.h"
+
+
 #include "../HardwareProfile.h"
 #include "../config/ConfigHardware.h"
 #include "../Graphics/Colors.h"
@@ -23,6 +23,11 @@
 #include "../icons/wrench32.h"  
 
 #include "../clock/setttingsRtcc.h"
+
+#include "DrawIcons.h"
+#include "DrawConfigWifi.h"
+#include "DrawGraphics.h"
+#include "DrawMenuRoot.h"
 #ifdef __MEMORY_RAM__ 
 extern WORD _palletBackGroundColor;
 #endif
@@ -83,7 +88,7 @@ bool menumMaster(int flag){
       if(get_portb4()==0 || flag==TRUE){
               
           while(get_portb4()==0);
-          //LED_RA3=~LED_RA3;
+          LED_RA3=~LED_RA3;
 
    
         switch (menu-1){
@@ -128,27 +133,37 @@ bool menumMaster(int flag){
         switch (menu){
                 /*
             case BATTERY:
+                 clearDesktop();
                 draw_icon( startLeft + (BATTERY*startLeft) ,toolBarVert ,(void *)&battery,setColorFrontIcon());
                     break;
             case CHECK:   
+                  clearDesktop();
                 draw_icon( startLeft + (CHECK*startLeft),toolBarVert ,(void *)&check,setColorFrontIcon());
                     break;    */    
             case SUN:       
+                clearDesktop();
                 draw_icon( startLeft + (SUN*startLeft),toolBarVert ,(void *)&sun32,setColorFrontIcon());
                     break;
-            case HOUSE:                                       
+            case HOUSE:        
+                clearDesktop();
                 draw_icon( startLeft + (HOUSE*startLeft),toolBarVert ,(void *)&globe32,setColorFrontIcon());
                     break;
-            case CONFIG:       
+            case CONFIG: 
+                //    clearDesktop();                    
+                    drawConfigWifi();      
                 draw_icon( startLeft + (CONFIG*startLeft),toolBarVert ,(void *)&cogs32,setColorFrontIcon());
+                        
                     break;
-            case DATABASE:       
+            case DATABASE:     
+                clearDesktop();
                 draw_icon( startLeft + (DATABASE*startLeft),toolBarVert ,(void *)&db32,setColorFrontIcon());
                     break;
-            case PIN_MAP:       
+            case PIN_MAP:      
+                clearDesktop();
                 draw_icon( startLeft + (PIN_MAP*startLeft) ,toolBarVert ,(void *)&pinmap32,setColorFrontIcon());
                     break;
             case USERS:       
+                clearDesktop();
                 draw_icon( startLeft + (USERS*startLeft) ,toolBarVert ,(void *)&users32,setColorFrontIcon());
                     break;
             default://menu=0;

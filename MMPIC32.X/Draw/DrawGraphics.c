@@ -1,14 +1,13 @@
-#include "DrawIcons.h"
-//#include "System.h"n
-
-//#include <GenericTypeDefs.h>
-//#include "Colors.h"
-
+#include <GenericTypeDefs.h>
+#include <p32xxxx.h>
+#include "../HardwareProfile.h"
 #include "../config/ConfigHardware.h"
-
+#include "../Graphics/Colors.h"
+#include "../Graphics/Ssd963Cmd.h"
 #include "../Graphics/Ssd1963.h"
 #include "../Graphics/Tft.h"
-#include "../HardwareProfile.h"
+#include "DrawIcons.h"
+#include "DrawGraphics.h"
 
 
 void buttonSelect(UINT8 select){
@@ -88,25 +87,18 @@ drawButtons();
 }
 
 
-
-
-
 void home_draw(void ){
     static UINT start_x;
     start_x=48;
-
     _color=COLOR_BACKGROUND;
     ClearDevice();
     drawText();
-/*
-    draw_icon( start_x ,272-64 ,(void *)&battery); start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&check); start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&sun32);start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&globe32);start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&cogs32);start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&db32);start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&wrench32);start_x=start_x+48;
-    draw_icon( start_x ,272-64 ,(void *)&users32);start_x=start_x+48;      
-//return;
- */
 }
+
+void setColorArea(UINT16 start_X,UINT16 start_y,UINT16 end_x,UINT16 end_y,WORD color){
+    _color=color;
+    SetArea(start_X,end_x,start_y,end_y);
+}
+
+
+   

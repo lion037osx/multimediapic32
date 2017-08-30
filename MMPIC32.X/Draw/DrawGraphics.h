@@ -19,6 +19,9 @@ extern "C" {
 //void button(WORD color,UINT16 x_start_tmp,UINT16 x_end_tmp,UINT16 y_start_tmp,UINT16 y_end_tmp);
 void init_buttons_draw(void);
 void home_draw(void );
+
+void setColorArea(UINT16 start_X,UINT16 start_y,UINT16 end_x,UINT16 end_y,WORD color);
+void clearDesktop(void);
 //void draw_menu(int sel );
 
 //void draw_button_slider(void);

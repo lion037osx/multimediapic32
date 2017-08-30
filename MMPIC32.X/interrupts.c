@@ -82,6 +82,5 @@ void ConfigInterrupts(void){
     ConfigInterruptExternal1();
 #endif
     INTConfigureSystem(INT_SYSTEM_CONFIG_MULT_VECTOR);
-
 }
 

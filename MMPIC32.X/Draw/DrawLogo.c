@@ -6,6 +6,7 @@
 #include <GenericTypeDefs.h>
 #include "../Graphics/Ssd1963.h"
 #include "../HardwareProfile.h"
+#include "DrawLogo.h"
 
 #ifdef __MEMORY_FLASH__
 #include "../drivers/SST25VF016.h"
@@ -13,11 +14,39 @@ extern WORD _palletBackGroundColor;
 #else //__MEMORY_RAM__
     #include "../icons/logo.h"
 extern WORD _palletBackGroundColor;
+#include "../icons/domotics13_24bitsC32.h"
 #endif
 
+
+
+void drawLogoRam(void){
+#ifdef __MEMORY_RAM__
+    writeFastBmp((void *)&domotics);   
+#endif
+    
+#ifdef __MEMORY_FLASH__
+    writeFastBmp();   
+#endif
+}
+
+void showLogo(){
+#ifdef __MEMORY_RAM__
+    writeFastBmp((void *)&domotics);   
+#endif
+    
+#ifdef __MEMORY_FLASH__
+    writeFastBmp();   
+#endif
+}
+
+/*
 #ifdef __MEMORY_FLASH__
 //NEW VERSION
-void showLogo(void){      
+void showLogo(void){   
+    
+#ifdef __MEMORY_RAM__
+drawLogoRam();  
+#else
 static SHORT x,y;
 DWORD address=0x0000;
 
@@ -27,8 +56,9 @@ DWORD address=0x0000;
 #endif
     
 address=0x6;
-
-while(y<272)
+y=272;
+//while(y<272)
+while(y--)
     {
     x=0x0000;
     while(x<480)
@@ -45,9 +75,10 @@ while(y<272)
            // address++;
            x++;
         }   
-    y++;
+    //y++;
     }
 _palletBackGroundColor=_color;//(WORD)((bmp[address-2]<<8)&0xFF00 | (bmp[address-1]&0xFF));
+    #endif
 }
 #endif
 
@@ -81,4 +112,4 @@ while(y--)
 _palletBackGroundColor=_color;
 }
 #endif
-
+*/

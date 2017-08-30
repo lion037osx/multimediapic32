@@ -345,4 +345,11 @@ void SetArea(SHORT start_x, SHORT start_y, SHORT end_x, SHORT end_y);
 
 void setColor(WORD color);
 
+void clearDesktop(void);
+
+    #ifdef __MEMORY_RAM__
+    void writeFastBmp(WORD *color);
+    #else
+    void writeFastBmp(void);
+    #endif
 #endif // _SSD1963_H

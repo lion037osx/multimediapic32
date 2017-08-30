@@ -42,7 +42,8 @@ extern "C" {
     
 #define ConfigButtonRB4()     {TRISBbits.TRISB4=1;PORTSetPinsDigitalIn(IOPORT_B, BIT_4);}    
 /*Config  pin backligth */
-#define BACKLIGTH PORTDbits.RD0 
+#define BACKLIGTH LATDbits.LATD0 //PORTDbits.RD0 //
+    
 #define  Back_ligth_off() {BACKLIGTH=0;}
 #define ConfigBackligth() {TRISDbits.TRISD0=0;}    
     

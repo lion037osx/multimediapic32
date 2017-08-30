@@ -15,7 +15,9 @@
 #include "Ssd1963.h"
 #include <plib.h>
 #include <p32xxxx.h>
-
+#ifdef __MEMORY_FLASH__       
+#include "../drivers/SST25VF016.h"
+#endif
 
 WORD  _color;
 
@@ -28,6 +30,8 @@ WORD  _color;
 #if defined (PIC18F24JXXX)
 	#define WriteCommand(cmd) {RS_LAT_BIT = 0; DAT = cmd; CS_LAT_BIT = 0; WR_LAT_BIT = 0; WR_LAT_BIT = 1; CS_LAT_BIT = 1;};
 #elif defined (__PIC32MX__)
+
+
 	#define WriteCommand(cmd) {RS_LAT_BIT = 0; PMDIN = cmd; CS_LAT_BIT = 0; WR_LAT_BIT = 0; WR_LAT_BIT = 1; CS_LAT_BIT = 1;};
 #endif
 
@@ -140,7 +144,6 @@ void SetTearingCfg(BOOL state, BOOL mode)
 	{
 		WriteCommand(0x34);
 	}
-
 }
 
 
@@ -317,7 +320,6 @@ WriteData(0x55); 				// set 16bpp
 	DelayMs(1);
 	GPIO_WR(LCD_RESET,1);
 //#endif
-
 	WriteCommand(CMD_ON_DISPLAY);	// Turn on display; show the image on display	
 }
 
@@ -366,6 +368,33 @@ void PutPixel(SHORT x, SHORT y)
 * Note: none
 *
 ********************************************************************/
+
+
+void ClearDevice(void){
+	DWORD 	xcounter, ycounter;
+
+	SetArea(0,0,DISP_HOR_RESOLUTION-1,DISP_VER_RESOLUTION-1);
+	WriteCommand(CMD_WR_MEMSTART);
+	CS_LAT_BIT = 0;
+    ycounter=0;
+    while(ycounter<DISP_VER_RESOLUTION)
+	{
+        xcounter=0;
+        while(xcounter<DISP_HOR_RESOLUTION)
+		{
+			//#if (BUS_WIDTH == 8)
+			//	WriteColor(_color);
+			//#elif (BUS_WIDTH == 16)
+				WriteData(_color);
+			//#endif
+            xcounter++;
+		}
+        ycounter++;
+	}
+	CS_LAT_BIT = 1;
+}
+
+#ifdef __CLEAR_DEVICE_ORIGINAL__
 void ClearDevice(void)
 {
 	DWORD	counter;
@@ -390,6 +419,69 @@ void ClearDevice(void)
 
 	CS_LAT_BIT = 1;
 }
+#endif
 
+
+
+
+void clearDesktop(void){
+DWORD xcounter,ycounter;
+//_color=COLOR_BACKGROUND;
+SetArea(0,0,DISP_HOR_RESOLUTION-1,DISP_VER_RESOLUTION-1-64);
+
+WriteCommand(CMD_WR_MEMSTART);
+CS_LAT_BIT = 0;
+ycounter=0;
+    while(ycounter<DISP_VER_RESOLUTION)
+	{
+        xcounter=0;
+        while(xcounter<DISP_HOR_RESOLUTION)
+		{
+            WriteData(COLOR_BACKGROUND);
+            xcounter++;
+		}
+        ycounter++;
+	}
+	CS_LAT_BIT = 1;  
+}
+
+
+
+#ifdef __MEMORY_RAM__
+void writeFastBmp(WORD *color)
+#else
+void writeFastBmp(void)
+#endif
+{
+DWORD xcounter,ycounter;
+DWORD address=0x0000;
+WORD pixelDword;
+SetArea(0,0,DISP_HOR_RESOLUTION-1,DISP_VER_RESOLUTION-1);
+WriteCommand(CMD_WR_MEMSTART);
+CS_LAT_BIT = 0;
+ycounter=0;
+#ifdef __MEMORY_RAM__
+color=0x0000;
+#endif
+    while(ycounter<DISP_VER_RESOLUTION)
+	{
+        xcounter=0;
+        while(xcounter<DISP_HOR_RESOLUTION)
+		{
+#ifdef __MEMORY_RAM__            
+            WriteData((WORD *)*color);
+            color++;
+#endif                        
+#ifdef __MEMORY_FLASH__
+            pixelDword= (WORD)SST25ReadWord(address);            
+            WriteData(pixelDword);
+            address+=0x2;
+#endif             
+            xcounter++;
+		}
+        ycounter++;
+	}
+	CS_LAT_BIT = 1;    
+}
 
 

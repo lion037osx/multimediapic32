@@ -7,23 +7,23 @@
 #include "config/ConfigHardware.h"
 #include "run.h"
 #include "Draw/DrawMenuRoot.h"
+#include "Graphics/Ssd1963.h"
 
-
+void tearing(void){
+BACKLIGTH=~BACKLIGTH;
+}
 
 void run(void){
 UARTPutString("Welcome my app\r\n");
-
-//home_draw();
-
 //draw_tool_bar();
-
 drawInitMenu();
-//updateClock();
 initClock();
+
+SetBacklight(127);
+
 while(1){
-        
-//           LED_RA0=0;
-           if(menumMaster(FALSE));
+    //tearing();
+        if(menumMaster(FALSE));
     }
 }
 

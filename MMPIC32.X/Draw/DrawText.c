@@ -119,11 +119,12 @@ address_ascii=((font[0x3+0x08+((ascii-firstChar)*4)])<<16)&0xFF0000|( ( font[0x2
 return width;     
 }
 
-WORD str_draw_txt(WORD x,WORD y,char* str,WORD color_font){
-
+WORD str_draw_txt(WORD x,WORD y,char *str,WORD color_font){
+static WORD strlen_x;
     while(*str)
     x=x+func_draw_txt(x,y,(char) *str++,color_font);    
-return x;
+    strlen_x=x;
+    return strlen_x;
 }
 
 void drawText(void){
@@ -132,19 +133,10 @@ static WORD deb;
 
     x=48;
     y=48;
-    //str_draw_txt((480/2)-48,96,"23:30");
-   
     deb=str_draw_txt(4,4," @Projects Graphics pic32 QT lion OSX... ",COLOR_FRONT_TEXT);
-//    deb=str_draw_txt(4,4,"Domotics House ...",GRAY2);
-        //deb=str_draw_txt(4,4,"sStT",GRAY1);
-        //deb=str_draw_txt(1,4,"0123456789",GRAY1);
-         //deb=str_draw_txt(1,32,"abcdefghijklmnopqrstuvwxyz",GRAY1);
-         //deb=str_draw_txt(1,64,"ABCDEFGHIJKLMNOPQRSTUVWXYZ",GRAY1);
-// deb=str_draw_txt(1,96,",.;:{}[]+*-_#$%&/()=?¡¿!|",GRAY1);
     #ifdef __DEBUG__
         debug("value return x:",deb);
     #endif
-//return;
 }
 
 
@@ -152,17 +144,6 @@ void draw_clock(MCP79401 rtcc){
 static BYTE str[32];
 static MCP79401 ram_rtcc;
 #ifdef __DRAW_CLOCK__  
-    #ifdef __DRAW_DATE__
-        sprintf(str,"20%d%d.%d%d.%d%d",(ram_rtcc.year)>>4,ram_rtcc.year&0x7,(ram_rtcc.month>>4)&0x7,ram_rtcc.month&0xf,(ram_rtcc.date>>4)&0x7,ram_rtcc.date&0xf);
-        //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
-        str_draw_txt(200,96,str,COLOR_BACKGROUND);
-
-
-
-        sprintf(str,"20%d%d.%d%d.%d%d",(rtcc.year)>>4,rtcc.year&0x7,(rtcc.month>>4)&0x7,rtcc.month&0xf,(rtcc.date>>4)&0x7,rtcc.date&0xf);
-        //sprintf(str,"%d %s %d%d",rtcc.year,str_month(rtcc.month),(rtcc.day>>4)&0x7,rtcc.day&0xf);
-        str_draw_txt(200,96,str,COLOR_FONT_CLOCK);
-    #endif
     sprintf(str,"%d%d:%d%d",(ram_rtcc.hour>>4)&0x7,ram_rtcc.hour&0xf,(ram_rtcc.min>>4)&0x7,ram_rtcc.min&0xf);    
     str_draw_txt(412,230,str,setClearClockColor());     
     

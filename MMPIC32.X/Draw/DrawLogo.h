@@ -14,6 +14,11 @@ extern "C" {
 
 void showLogo(void);
 
+//#ifdef __MEMORY_RAM__
+void drawLogoRam(void);
+//#endif
+
+
 
 #ifdef	__cplusplus
 }

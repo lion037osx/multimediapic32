@@ -43,6 +43,15 @@ void configUart(void){
     configInterruptUart();
 }
 
+void initTearing(void){
+	#if defined (USE_TE_PIN)
+	SetTearingCfg(1, 0);	//enable TE pin for Vsync
+	INTCONbits.INT2EP = 0; 	//falling edge detect
+	//debug pin to tell the write time
+	//TRISBbits.TRISB1 = 0;
+	//LATBbits.LATB1 = 1;
+	#endif	
+}
 
 
 void inits(void){
@@ -56,18 +65,18 @@ void inits(void){
     ConfigBackligth();
     ConfigHardwareLeds();
     ConfigClearAllLeds();
-    //_colorBackGround=RED;
-
+initTearing();
     ResetDevice();//graphics function
-    
-    //_color=COLOR_BACKGROUND;
-    //ClearDevice();
-    
+
     showLogo();
     
     BACKLIGTH=1;
-    DelayMs(2000);  
-  
+    DelayMs(3000);
+    _color=COLOR_BACKGROUND;
+     
+    ClearDevice();
+    //DelayMs(200); 
+    
     initESP8266();
     ConfigButtonRB4();      
     initClock();  

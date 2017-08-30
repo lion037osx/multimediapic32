@@ -32,7 +32,8 @@ int main(void){
 void __ISR(_TIMER_1_VECTOR,IPL6SOFT) Timer1Handler(void)
 {
 static unsigned int counterTimer1=0;
-static unsigned int count=0;   
+static unsigned int count=0; 
+
     if(count>=500){
     updateClock();
     count=0;

@@ -21,6 +21,7 @@
         <itemPath>Draw/DrawMenuRoot.h</itemPath>
         <itemPath>Draw/DrawLogo.h</itemPath>
         <itemPath>Draw/DrawClock.h</itemPath>
+        <itemPath>Draw/DrawConfigWifi.h</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.h</itemPath>
@@ -81,6 +82,7 @@
         <itemPath>Draw/DrawIcon.c</itemPath>
         <itemPath>Draw/DrawLogo.c</itemPath>
         <itemPath>Draw/DrawClock.c</itemPath>
+        <itemPath>Draw/DrawConfigWifi.c</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/tsc2046.c</itemPath>
