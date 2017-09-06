@@ -1,0 +1,37 @@
+Devices:
+
+pic32mx795
+sst25vf016
+ft232bm
+mcp7940
+tsc2046
+
+
+
+Implement:
+
+25AA02E48-I/SN
+mrf24j40
+enc28j60
+pic18f4550
+electrolitic radial smd 100ux16v
+reg LM7805 smd
+MCP9700A-E/TO (temperature sensor)
+vs1003b
+
+*sensor movement
+*tearing
+*mp3
+
+
+Peripherals:
+
+rtcc
+sd spi1,2
+i2c
+uart
+adc
+timers
+interrupt
+
+
