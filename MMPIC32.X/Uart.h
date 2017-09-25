@@ -47,7 +47,8 @@
 
 #define BRG_DIV1 8
 #define BRGH1 0
-#define BAUDRATE1 115200UL
+//#define BAUDRATE1 115200UL
+#define BAUDRATE1 9600UL
 
 #define BACKSPACE ' '
 
@@ -57,6 +58,7 @@
 extern BYTE UART1GetChar(void);  
 extern void UART1Init( void);
 extern void UART1Puts( char *str );
+ extern void UART1PutChar(BYTE ch);
 
 
 /*********************************************************************

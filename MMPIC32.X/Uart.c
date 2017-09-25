@@ -373,10 +373,11 @@ BYTE Hex2Char(BYTE hex)
 
 
 
-
+/*
 void UART1Init( void){   
     setTrisUart1();
-    U1BRG = BAUDRATEREG1;
+    //U1BRG = BAUDRATEREG1;
+    	U1BRG = ((GetPeripheralClock()/2) / 4 / 9600) - 1;
     U1MODE = 0;
     U1MODEbits.BRGH = BRGH1;
     U1STA = 0;
@@ -389,9 +390,34 @@ void UART1Init( void){
         U1STAbits.URXEN = 1;
     #endif
 } // initU2
+*/
+void UART1Init(){
+U1BRG = (GetPeripheralClock() / 4 / BAUDRATE1) - 1;
+    U1MODE = 0;
+    U1STA = 0;
+    U1MODEbits.UARTEN = 1;
+    U1MODEbits.STSEL = 0;
+    U1STAbits.UTXEN = 1;
+    #ifdef __PIC32MX
+    U1STAbits.URXEN = 1;
+    #endif
+    U1MODEbits.BRGH = 1;
+    U1STAbits.OERR = 0;
+}
 
 
 
+ void UART1PutChar(BYTE ch)
+{
+
+    // Wait for Tx buffer is not full
+   while(U1STAbits.UTXBF == 1);
+    U1TXREG = ch;
+       //  U1TXREG = ch;
+
+   // while(U1STAbits.TRMT == 0);
+}
+/*
 void UART1PutChar( char ch ){
     U1TXREG = ch;
     #if !defined(__PIC32MX__)
@@ -400,8 +426,33 @@ void UART1PutChar( char ch ){
     while(U1STAbits.TRMT == 0);
 }
 
-void UART1Puts( char *str ){
+
+ void UARTPutChar(BYTE ch)
+{
+
+    // Wait for Tx buffer is not full
+    while(U2STAbits.UTXBF == 1);
+    U2TXREG = ch;
+}
+ 
+ void UARTPutString(char *str)
+{
+    while(*str)
+        UARTPutChar(*str++);
+} 
+ 
+ void UART1Puts( char *str ){
 static unsigned char c;
+
+    while((c = *str++))UART1PutChar(c);
+}
+
+ */
+
+void UART1Puts( char *str ){
+ //  while(*str)
+    //    UART1PutChar(*str++);
+    static unsigned char c;
 
     while((c = *str++))UART1PutChar(c);
 }

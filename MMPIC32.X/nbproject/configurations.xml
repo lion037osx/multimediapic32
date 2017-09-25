@@ -50,6 +50,9 @@
         <itemPath>icons/users32.h</itemPath>
         <itemPath>icons/wrench32.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="sound" displayName="sound" projectFiles="true">
+        <itemPath>sound/dfplayer.h</itemPath>
+      </logicalFolder>
       <itemPath>HardwareProfile.h</itemPath>
       <itemPath>System.h</itemPath>
       <itemPath>SystemClock.h</itemPath>
@@ -96,6 +99,9 @@
       <logicalFolder name="Graphics" displayName="Graphics" projectFiles="true">
         <itemPath>Graphics/Ssd1963.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="sound" displayName="sound" projectFiles="true">
+        <itemPath>sound/dfplayer.c</itemPath>
+      </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Uart.c</itemPath>
       <itemPath>inits.c</itemPath>
@@ -124,7 +130,7 @@
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>1.20</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>4</platform>
       </toolsSet>
       <compileType>
         <linkerTool>

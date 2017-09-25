@@ -17,6 +17,7 @@ WORD setClearClockColor(void){
     return (_palletBackGroundColor);
    #endif
 #ifdef __MEMORY_FLASH__ 
-    return (_palletBackGroundColor);
+   // return (_palletBackGroundColor);
+    return (COLOR_BACKGROUND_CLOCK);
 #endif
 }

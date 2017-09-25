@@ -63,6 +63,7 @@ void __ISR(_TIMER_2_VECTOR,ipl6AUTO) Timer1Handler(void)
 #endif
 
 #ifdef __UART1__
+#ifdef __INTERRUPT_UART1__
 void __ISR(_UART1_VECTOR, IPL1SOFT) IntUart1Handler(void)
 {
 static BYTE rxUart1[1024];
@@ -80,6 +81,8 @@ static int i=0;
             INTClearFlag(INT_SOURCE_UART_TX(UART1));
         }
 }
+    #endif
+
 #endif
 
 

@@ -91,7 +91,9 @@ extern "C" {
     
     
 #define __UART1__
+//#define __INTERRUPT_UART1__
 #define __UART2__
+    //#define __INTERRUPT_UART2__
     
 /*******************************************       Config Esp8266         ***********************************************/    
     

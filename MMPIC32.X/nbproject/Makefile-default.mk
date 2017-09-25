@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c Draw/DrawLogo.c Draw/DrawClock.c Draw/DrawConfigWifi.c drivers/tsc2046.c drivers/spiTsc2046.c drivers/esp8266.c drivers/SST25VF016.c fonts/century_size12.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c TimeDelay.c interrupts.c GlobalVar.c
+SOURCEFILES_QUOTED_IF_SPACED=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c Draw/DrawLogo.c Draw/DrawClock.c Draw/DrawConfigWifi.c drivers/tsc2046.c drivers/spiTsc2046.c drivers/esp8266.c drivers/SST25VF016.c fonts/century_size12.c Graphics/Ssd1963.c sound/dfplayer.c main.c Uart.c inits.c run.c TimeDelay.c interrupts.c GlobalVar.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/Draw/DrawLogo.o ${OBJECTDIR}/Draw/DrawClock.o ${OBJECTDIR}/Draw/DrawConfigWifi.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/drivers/esp8266.o ${OBJECTDIR}/drivers/SST25VF016.o ${OBJECTDIR}/fonts/century_size12.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/Draw/DrawGraphics.o.d ${OBJECTDIR}/Draw/DrawText.o.d ${OBJECTDIR}/Draw/DrawMenuRoot.o.d ${OBJECTDIR}/Draw/DrawIcon.o.d ${OBJECTDIR}/Draw/DrawLogo.o.d ${OBJECTDIR}/Draw/DrawClock.o.d ${OBJECTDIR}/Draw/DrawConfigWifi.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d ${OBJECTDIR}/drivers/esp8266.o.d ${OBJECTDIR}/drivers/SST25VF016.o.d ${OBJECTDIR}/fonts/century_size12.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/interrupts.o.d ${OBJECTDIR}/GlobalVar.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/Draw/DrawLogo.o ${OBJECTDIR}/Draw/DrawClock.o ${OBJECTDIR}/Draw/DrawConfigWifi.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/drivers/esp8266.o ${OBJECTDIR}/drivers/SST25VF016.o ${OBJECTDIR}/fonts/century_size12.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/sound/dfplayer.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/clock/rtcc.o.d ${OBJECTDIR}/clock/setttingsRtcc.o.d ${OBJECTDIR}/clock/ds1307.o.d ${OBJECTDIR}/clock/drvI2C.o.d ${OBJECTDIR}/Draw/DrawGraphics.o.d ${OBJECTDIR}/Draw/DrawText.o.d ${OBJECTDIR}/Draw/DrawMenuRoot.o.d ${OBJECTDIR}/Draw/DrawIcon.o.d ${OBJECTDIR}/Draw/DrawLogo.o.d ${OBJECTDIR}/Draw/DrawClock.o.d ${OBJECTDIR}/Draw/DrawConfigWifi.o.d ${OBJECTDIR}/drivers/tsc2046.o.d ${OBJECTDIR}/drivers/spiTsc2046.o.d ${OBJECTDIR}/drivers/esp8266.o.d ${OBJECTDIR}/drivers/SST25VF016.o.d ${OBJECTDIR}/fonts/century_size12.o.d ${OBJECTDIR}/Graphics/Ssd1963.o.d ${OBJECTDIR}/sound/dfplayer.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Uart.o.d ${OBJECTDIR}/inits.o.d ${OBJECTDIR}/run.o.d ${OBJECTDIR}/TimeDelay.o.d ${OBJECTDIR}/interrupts.o.d ${OBJECTDIR}/GlobalVar.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/Draw/DrawLogo.o ${OBJECTDIR}/Draw/DrawClock.o ${OBJECTDIR}/Draw/DrawConfigWifi.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/drivers/esp8266.o ${OBJECTDIR}/drivers/SST25VF016.o ${OBJECTDIR}/fonts/century_size12.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o
+OBJECTFILES=${OBJECTDIR}/clock/rtcc.o ${OBJECTDIR}/clock/setttingsRtcc.o ${OBJECTDIR}/clock/ds1307.o ${OBJECTDIR}/clock/drvI2C.o ${OBJECTDIR}/Draw/DrawGraphics.o ${OBJECTDIR}/Draw/DrawText.o ${OBJECTDIR}/Draw/DrawMenuRoot.o ${OBJECTDIR}/Draw/DrawIcon.o ${OBJECTDIR}/Draw/DrawLogo.o ${OBJECTDIR}/Draw/DrawClock.o ${OBJECTDIR}/Draw/DrawConfigWifi.o ${OBJECTDIR}/drivers/tsc2046.o ${OBJECTDIR}/drivers/spiTsc2046.o ${OBJECTDIR}/drivers/esp8266.o ${OBJECTDIR}/drivers/SST25VF016.o ${OBJECTDIR}/fonts/century_size12.o ${OBJECTDIR}/Graphics/Ssd1963.o ${OBJECTDIR}/sound/dfplayer.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Uart.o ${OBJECTDIR}/inits.o ${OBJECTDIR}/run.o ${OBJECTDIR}/TimeDelay.o ${OBJECTDIR}/interrupts.o ${OBJECTDIR}/GlobalVar.o
 
 # Source Files
-SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c Draw/DrawLogo.c Draw/DrawClock.c Draw/DrawConfigWifi.c drivers/tsc2046.c drivers/spiTsc2046.c drivers/esp8266.c drivers/SST25VF016.c fonts/century_size12.c Graphics/Ssd1963.c main.c Uart.c inits.c run.c TimeDelay.c interrupts.c GlobalVar.c
+SOURCEFILES=clock/rtcc.c clock/setttingsRtcc.c clock/ds1307.c clock/drvI2C.c Draw/DrawGraphics.c Draw/DrawText.c Draw/DrawMenuRoot.c Draw/DrawIcon.c Draw/DrawLogo.c Draw/DrawClock.c Draw/DrawConfigWifi.c drivers/tsc2046.c drivers/spiTsc2046.c drivers/esp8266.c drivers/SST25VF016.c fonts/century_size12.c Graphics/Ssd1963.c sound/dfplayer.c main.c Uart.c inits.c run.c TimeDelay.c interrupts.c GlobalVar.c
 
 
 CFLAGS=
@@ -207,6 +207,12 @@ ${OBJECTDIR}/Graphics/Ssd1963.o: Graphics/Ssd1963.c  nbproject/Makefile-${CND_CO
 	@${RM} ${OBJECTDIR}/Graphics/Ssd1963.o.d 
 	@${RM} ${OBJECTDIR}/Graphics/Ssd1963.o 
 	@${FIXDEPS} "${OBJECTDIR}/Graphics/Ssd1963.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Graphics/Ssd1963.o.d" -o ${OBJECTDIR}/Graphics/Ssd1963.o Graphics/Ssd1963.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/sound/dfplayer.o: sound/dfplayer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/sound" 
+	@${RM} ${OBJECTDIR}/sound/dfplayer.o.d 
+	@${RM} ${OBJECTDIR}/sound/dfplayer.o 
+	@${FIXDEPS} "${OBJECTDIR}/sound/dfplayer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sound/dfplayer.o.d" -o ${OBJECTDIR}/sound/dfplayer.o sound/dfplayer.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -352,6 +358,12 @@ ${OBJECTDIR}/Graphics/Ssd1963.o: Graphics/Ssd1963.c  nbproject/Makefile-${CND_CO
 	@${RM} ${OBJECTDIR}/Graphics/Ssd1963.o.d 
 	@${RM} ${OBJECTDIR}/Graphics/Ssd1963.o 
 	@${FIXDEPS} "${OBJECTDIR}/Graphics/Ssd1963.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Graphics/Ssd1963.o.d" -o ${OBJECTDIR}/Graphics/Ssd1963.o Graphics/Ssd1963.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/sound/dfplayer.o: sound/dfplayer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/sound" 
+	@${RM} ${OBJECTDIR}/sound/dfplayer.o.d 
+	@${RM} ${OBJECTDIR}/sound/dfplayer.o 
+	@${FIXDEPS} "${OBJECTDIR}/sound/dfplayer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sound/dfplayer.o.d" -o ${OBJECTDIR}/sound/dfplayer.o sound/dfplayer.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 

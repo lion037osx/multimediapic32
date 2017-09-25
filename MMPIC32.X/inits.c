@@ -9,6 +9,7 @@
 #include "HardwareProfile.h"
 #include "Draw/DrawLogo.h"
 #include "drivers/SST25VF016.h"
+#include "sound/dfplayer.h"
 
 extern WORD _palletBackGroundColor;
 
@@ -19,9 +20,11 @@ void configInterruptUart(void){
 //UARTSetDataRate(UART2, GetPeripheralClock(), DESIRED_BAUDRATE);
 //UARTEnable(UART2, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
 #ifdef __UART1__    
-    INTEnable(INT_SOURCE_UART_RX(UART1), INT_ENABLED);
-    INTSetVectorPriority(INT_VECTOR_UART(UART1), INT_PRIORITY_LEVEL_1);
-    INTSetVectorSubPriority(INT_VECTOR_UART(UART1), INT_SUB_PRIORITY_LEVEL_0);
+    #ifdef __INTERRUPT_UART1__
+        INTEnable(INT_SOURCE_UART_RX(UART1), INT_ENABLED);
+        INTSetVectorPriority(INT_VECTOR_UART(UART1), INT_PRIORITY_LEVEL_1);
+        INTSetVectorSubPriority(INT_VECTOR_UART(UART1), INT_SUB_PRIORITY_LEVEL_0);
+    #endif
 #endif   
     
 #ifdef __UART2__
@@ -71,13 +74,15 @@ initTearing();
     showLogo();
     
     BACKLIGTH=1;
-    DelayMs(3000);
+    playFolderDfp();
+
+    DelayMs(4000);
     _color=COLOR_BACKGROUND;
      
     ClearDevice();
     //DelayMs(200); 
     
-    initESP8266();
+    //initESP8266();
     ConfigButtonRB4();      
     initClock();  
 }
